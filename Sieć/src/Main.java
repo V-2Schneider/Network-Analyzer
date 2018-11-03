@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static List<Node> nudesy = new ArrayList();
+    public static List<Node> nudesy = new ArrayList<>();
     public static int p,ent,outt;
 
     public static void main(String[] args) throws IOException {

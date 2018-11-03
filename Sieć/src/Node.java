@@ -14,8 +14,8 @@ public class Node implements Serializable {
         private int id;
         private String name;
         private Type type;
-        private List<Connection> Incoming = new ArrayList();
-        private List<Connection> Outgoing = new ArrayList();
+        private List<Connection> Incoming = new ArrayList<>();
+        private List<Connection> Outgoing = new ArrayList<>();
 
             public void setId(int id){
                 this.id=id;
