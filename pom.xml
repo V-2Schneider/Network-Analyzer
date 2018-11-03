@@ -41,6 +41,14 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+			<plugin>
+			    <groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+						<compilerArgument>-Xlint:unchecked</compilerArgument>
+				</configuration>
+			</plugin>
         </plugins>
     </build>
 
@@ -56,6 +64,7 @@
             <url>https://repo.spring.io/libs-release</url>
         </pluginRepository>
     </pluginRepositories>
-
+	
+	
 
 </project>
