@@ -1,3 +1,5 @@
+package pl.put.poznan.transformer.Sieć.src;
+
 import java.io.Console;
 import java.io.IOException;
 import java.io.Serializable;
@@ -8,7 +10,7 @@ import java.util.Scanner;
 
 public class Node implements Serializable {
     public enum type {
-        entry, exit, regular;
+        entry, exit, regular
     }
         private static final long serialVersionUID = 1L;
         private int id;

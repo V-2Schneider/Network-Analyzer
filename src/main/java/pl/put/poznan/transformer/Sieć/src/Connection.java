@@ -1,3 +1,5 @@
+package pl.put.poznan.transformer.Sieć.src;
+
 public class Connection {
     private int from;
     private int to;
