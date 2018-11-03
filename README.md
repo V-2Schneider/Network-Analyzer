@@ -1,3 +1,4 @@
+![Build Status](https://travis-ci.org/V-2Schneider/Network-Analyzer.svg?branch=master)
 # Network-Analyzer
 ## Czym jest Network Analyzer?
 Dla administratorów różnego rodzaju sieci (energetycznych, wodociągowych itp.) nasza aplikacja Network Analyzer umożliwi znajdowanie ekonomicznych połączeń pomiędzy węzłami sieci oraz dostarczy informacji o samej sieci.
