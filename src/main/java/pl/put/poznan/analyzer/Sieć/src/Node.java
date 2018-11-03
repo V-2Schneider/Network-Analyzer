@@ -1,9 +1,7 @@
-package pl.put.poznan.transformer.Sieć.src;
+package pl.put.poznan.analyzer.Sieć.src;
 
-import java.io.Console;
 import java.io.IOException;
 import java.io.Serializable;
-import java.lang.invoke.MethodHandleInfo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -34,7 +32,7 @@ public class Node implements Serializable {
                 else
                     this.type = Type.regular;
             }
-            public void setIncoming(int n) throws IOException {
+            public void setIncoming(int n) {
                 Scanner s = new Scanner(System.in);
                 for (int i = 0; i < n ; i++) {
                     int pom;
@@ -49,7 +47,7 @@ public class Node implements Serializable {
                     Incoming.add(con);
                 }
             }
-            public void setOutgoing(int n) throws IOException {
+            public void setOutgoing(int n) {
                 Scanner s = new Scanner(System.in);
                 for (int i = 0; i < n ; i++) {
                     int pom;
@@ -77,10 +75,10 @@ public class Node implements Serializable {
                 System.out.println("Nie ma wchodzących");
                 else {
                     System.out.println("Wchodzace");
-                    for (int i = 0; i < Incoming.size(); i++) {
+                    for (Connection aIncoming : Incoming) {
 
-                        System.out.println("Z " + Incoming.get(i).getFrom() + " do " + Incoming.get(i).getTo());
-                        System.out.println("Koszt polaczenia " + Incoming.get(i).getValue());
+                        System.out.println("Z " + aIncoming.getFrom() + " do " + aIncoming.getTo());
+                        System.out.println("Koszt polaczenia " + aIncoming.getValue());
                     }
                 }
             }
@@ -89,9 +87,9 @@ public class Node implements Serializable {
                     System.out.println("Nie ma wychodzących");
                 else {
                     System.out.println("Wychodzace");
-                    for (int i = 0; i < Outgoing.size(); i++) {
-                        System.out.println("Z " + Outgoing.get(i).getFrom() + " do " + Outgoing.get(i).getTo());
-                        System.out.println("Koszt polaczenia " + Outgoing.get(i).getValue());
+                    for (Connection aOutgoing : Outgoing) {
+                        System.out.println("Z " + aOutgoing.getFrom() + " do " + aOutgoing.getTo());
+                        System.out.println("Koszt polaczenia " + aOutgoing.getValue());
                     }
                 }
              }
