@@ -17,6 +17,8 @@ public class Main {
         Scanner s = new Scanner(System.in);
             System.out.println("Gimme ilość nodes");
             p = s.nextInt();
+            final int v = p;
+            Graph graph = new Graph(v);
             for (int i = 1; i <= p; i++) {
                 System.out.println("Oto jest nudes nr " + i);
                 Node n = new Node();
@@ -30,7 +32,21 @@ public class Main {
                 System.out.println("Gimme ilość wychodzace");
                 outt = s.nextInt();
                 if (outt != 0) {
-                    n.setOutgoing(outt);
+                    //Scanner s = new Scanner(System.in);
+                    for (int j = 0; j < outt ; j++) {
+                        int pom;
+                        Connection con = new Connection();
+                        System.out.println("Gimme node nastepnik");
+                        pom = s.nextInt();
+                        //adjList.get(n.getId()).add(pom);
+                        graph.addEdge(n.getId()-1, pom-1);
+                        con.setTo(pom);
+                        con.setFrom(n.getId());
+                        System.out.println("Gimme koszt");
+                        pom = s.nextInt();
+                        con.setValue(pom);
+                        n.setOutgoing(con);
+                    }
                 }
                 n.setType();
                 nudesy.add(n);
@@ -44,6 +60,13 @@ public class Main {
                 nudesy.get(i).getIncoming();
                 nudesy.get(i).getOutgoing();
                 nudesy.get(i).getType();
+            }
+            
+            //System.out.println("\n\nGraf skierowany: " + graph);
+
+            DFS dfs3 = new DFS(graph, 1); //nudes 2
+            for (int it : dfs3.getPathTo(2)) { //nudes 3
+                System.out.print(it + " ");
             }
 
 
