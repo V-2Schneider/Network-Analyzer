@@ -47,21 +47,8 @@ public class Node implements Serializable {
                     Incoming.add(con);
                 }
             }
-            public void setOutgoing(int n) {
-                Scanner s = new Scanner(System.in);
-                for (int i = 0; i < n ; i++) {
-                    int pom;
-                    Connection con = new Connection();
-                    System.out.println("Gimme node nastepnik");
-                    pom = s.nextInt();
-                    con.setTo(pom);
-                    con.setFrom(this.id);
-                    System.out.println("Gimme koszt");
-                    pom = s.nextInt();
-                    con.setValue(pom);
-                    Outgoing.add(con);
-
-                }
+            public void setOutgoing(Connection con) {
+                Outgoing.add(con);
             }
              public int getId() {
                 return id;
