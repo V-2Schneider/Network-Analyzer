@@ -7,15 +7,18 @@ class Graph {
     private int e;
     // liczba wierzcholkow
     private int v;
+    // maksymalny koszt
+    private int value;
     // tablica list sasiedztwa danego wierzcholka
     private List<Integer>[] adjacencyList;
 
     @SuppressWarnings("unchecked")
-    public Graph(int v) {
+    public Graph(int v, int value) {
         this.v = v;
+        this.value=value;
         this.e = 0;
-        adjacencyList = (List<Integer>[]) new List[v];
-        for (int i = 0; i < v; i++) {
+        adjacencyList = (List<Integer>[]) new List[v*value];
+        for (int i = 0; i < v*value; i++) {
             adjacencyList[i] = new ArrayList<Integer>();
         }
     }
@@ -32,7 +35,7 @@ class Graph {
     }
 
     public int getNumberOfVertices() {
-        return v;
+        return v*value;
     }
 
     public Iterable<Integer> getAdjacencyList(int v) {
