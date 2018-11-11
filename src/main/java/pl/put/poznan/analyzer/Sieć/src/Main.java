@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Main {
     public static List<Node> nudesy = new ArrayList<>();
-    public static int p,ent,outt, val;
+    public static int p,ent,outt, val, kosztd, kosztb;
 
     public static void main(String[] args) throws IOException {
         System.out.println("Elo robię sieć");
@@ -76,17 +76,24 @@ public class Main {
             }
             
             //System.out.println("\n\nGraf skierowany: " + graph);
-
+            
+            System.out.println("DFS");  
             DFS dfs3 = new DFS(graph, (1-1)); //nudes 2
             for (int it : dfs3.getPathTo(3-1)) { //nudes 3
-                System.out.print((it+1) + " ");
-            }
+                 kosztd++;                                
+                   if (it < (v - 1)) {                      
+                    System.out.print((it + 1) + " ");}   
+                   }                                        
+            System.out.println("Koszt DFS " + (kosztd - 1));  
 
+            System.out.println("BFS"); 
             BFS bfs3 = new BFS(graph, (1-1)); //nudes 1
             for (int it : bfs3.getPathTo((3-1))) { //nudes 3
-                if(it<v){
+                kosztb++
+                if(it<(v-1)){
                 System.out.print((it+1) + " ");}
              }
+             System.out.println("Koszt BFS " + (kosztb-1));  
 
 
             }
