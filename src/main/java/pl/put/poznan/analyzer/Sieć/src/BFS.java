@@ -1,4 +1,6 @@
+package pl.put.poznan.analyzer.Sieć.src;
 import java.util.*;
+
 
 class BFS {
     // tablica krawedzi ktora jest
