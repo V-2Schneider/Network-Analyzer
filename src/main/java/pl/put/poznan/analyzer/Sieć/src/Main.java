@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class Main {
     public static List<Node> nudesy = new ArrayList<>();
-    public static int p,ent,outt;
+    public static int p,ent,outt, val;
 
     public static void main(String[] args) throws IOException {
         System.out.println("Elo robię sieć");
@@ -18,7 +18,10 @@ public class Main {
             System.out.println("Gimme ilość nodes");
             p = s.nextInt();
             final int v = p;
-            Graph graph = new Graph(v);
+            System.out.println("Maksymalny koszt");
+            val = s.nextInt();
+            final int value = val;
+            Graph graph = new Graph(v, value);
             for (int i = 1; i <= p; i++) {
                 System.out.println("Oto jest nudes nr " + i);
                 Node n = new Node();
@@ -39,11 +42,21 @@ public class Main {
                         System.out.println("Gimme node nastepnik");
                         pom = s.nextInt();
                         //adjList.get(n.getId()).add(pom);
-                        graph.addEdge(n.getId()-1, pom-1);
+                        //graph.addEdge(n.getId()-1, pom-1);
+                        int source = n.getId()-1;
+                        int dest = pom-1;
                         con.setTo(pom);
                         con.setFrom(n.getId());
                         System.out.println("Gimme koszt");
                         pom = s.nextInt();
+                        int d = source;
+                        if(pom>1){
+                            for(int m=1; m< pom; m++){
+                                graph.addEdge(d, d+v-1);
+                                d=d+v-1;
+                            }
+                        }
+                        graph.addEdge(d, dest);
                         con.setValue(pom);
                         n.setOutgoing(con);
                     }
@@ -64,12 +77,16 @@ public class Main {
             
             //System.out.println("\n\nGraf skierowany: " + graph);
 
-            DFS dfs3 = new DFS(graph, 1); //nudes 2
-            for (int it : dfs3.getPathTo(2)) { //nudes 3
-                System.out.print(it + " ");
+            DFS dfs3 = new DFS(graph, (1-1)); //nudes 2
+            for (int it : dfs3.getPathTo(3-1)) { //nudes 3
+                System.out.print((it+1) + " ");
             }
 
-
+            BFS bfs3 = new BFS(graph, (1-1)); //nudes 1
+            for (int it : bfs3.getPathTo((3-1))) { //nudes 3
+                if(it<v){
+                System.out.print((it+1) + " ");}
+             }
 
 
             }
