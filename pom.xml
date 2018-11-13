@@ -6,7 +6,7 @@
 
     <groupId>pl.put.poznan</groupId>
     <artifactId>Network-Analyzer</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
