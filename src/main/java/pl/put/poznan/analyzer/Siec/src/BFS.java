@@ -1,15 +1,21 @@
-package pl.put.poznan.analyzer.Sieć.src;
+package pl.put.poznan.analyzer.Siec.src;
 import java.util.*;
 
 
-class BFS {
-    // tablica krawedzi ktora jest
-    // przechowuje wierzcholki z ktorych mozna sie dostac do biezacego
-    // okreslonego indeksem tablicy
+public class BFS {
+    /**
+     * tablica krawedzi ktora jest
+     * przechowuje wierzcholki z ktorych mozna sie dostac do biezacego
+     * okreslonego indeksem tablicy
+     */
     private int[] edgeTo;
-    // tablica odwiedzonych wierzcholkow
+    /**
+     * tablica odwiedzonych wierzcholkow
+     */
     private boolean[] marked;
-    // wierzcholek zrodlowy, z ktorego rozpoczynamy przeszukiwanie
+    /**
+     * wierzcholek zrodlowy, z ktorego rozpoczynamy przeszukiwanie
+     */
     private final int source;
     private Queue<Integer> priorityQueue;
 

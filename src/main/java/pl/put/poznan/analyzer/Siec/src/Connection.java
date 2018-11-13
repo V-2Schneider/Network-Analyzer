@@ -1,6 +1,6 @@
-package pl.put.poznan.analyzer.Sieć.src;
+package pl.put.poznan.analyzer.Siec.src;
 
-class Connection {
+public class Connection {
     private int from;
     private int to;
     private int value;

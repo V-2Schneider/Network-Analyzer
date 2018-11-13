@@ -1,6 +1,5 @@
-package pl.put.poznan.analyzer.Sieć.src;
+package pl.put.poznan.analyzer.Siec.src;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
