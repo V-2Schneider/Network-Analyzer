@@ -1,31 +1,37 @@
 package pl.put.poznan.analyzer.Sieć.src;
 
 class Connection {
-    private int from;
-    private int to;
+    private Node from;
+    private Node to;
     private int value;
 
-        public void setFrom(int from) {
-            this.from = from;
-        }
+    public Connection(Node from, Node to, int value) {
+        this.from = from;
+        this.to = to;
+        this.value = value;
+    }
 
-        public void setTo(int to) {
-            this.to = to;
-        }
+    public Node getTo() {
+        return to;
+    }
 
-        public void setValue(int value) {
-            this.value = value;
-        }
+    public void setTo(Node to) {
+        this.to = to;
+    }
 
-        public int getFrom() {
-            return from;
-        }
+    public Node getFrom() {
+        return from;
+    }
 
-        public int getValue() {
-            return value;
-        }
+    public void setFrom(Node from) {
+        this.from = from;
+    }
 
-        public int getTo() {
-            return to;
-        }
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
 }

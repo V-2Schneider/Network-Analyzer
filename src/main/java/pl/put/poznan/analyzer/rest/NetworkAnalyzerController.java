@@ -6,7 +6,6 @@ import pl.put.poznan.analyzer.logic.NetworkAnalyzer;
 
 import java.util.Arrays;
 
-
 @RestController
 @RequestMapping("/{text}")
 public class NetworkAnalyzerController {
