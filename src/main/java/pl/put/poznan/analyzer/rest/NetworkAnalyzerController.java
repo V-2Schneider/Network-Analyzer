@@ -21,8 +21,7 @@ public class NetworkAnalyzerController {
         logger.debug(Arrays.toString(transforms));
 
         // do the transformation, you should run your logic here, below just a silly example
-        NetworkAnalyzer transformer = new NetworkAnalyzer(transforms);
-        return transformer.transform(text);
+        return "Hello my ass";
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = "application/json")

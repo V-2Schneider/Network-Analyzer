@@ -1,46 +1,42 @@
 package pl.put.poznan.analyzer.Sieć.src;
 
+import org.apache.jasper.tagplugins.jstl.core.Out;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Node implements Serializable {
 
     private static final long serialVersionUID = 1L;
+    private static AtomicInteger sequence = new AtomicInteger(0);
+
     private int id;
     private String name;
     private TypeOfNode typeOfNode;
-    private ArrayList<Connection> Incoming = new ArrayList<>();
-    private ArrayList<Connection> Outgoing = new ArrayList<>();
+    private ArrayList<Connection> Incoming;
+    private ArrayList<Connection> Outgoing;
 
-    public Node(int id) {
-        this.id = id;
+    private static int nextInSequence(){
+        return sequence.incrementAndGet();
+    }
+
+    public Node(String name) {
+        this.name = name;
+        this.id = nextInSequence();
         this.Incoming = new ArrayList<>();
         this.Outgoing = new ArrayList<>();
-        setName();
         setType();
-    }
-
-    public Node() {
-        this.Incoming = new ArrayList<>();
-        this.Outgoing = new ArrayList<>();
-    }
-
-    public void setId(int id) {
-        this.id=id;
-    }
-
-    public void setName() {
-        this.name = "node_"+this.id;
     }
 
     public void setType() {
         if(Incoming.isEmpty())
             this.typeOfNode = TypeOfNode.entry;
-        else if(Outgoing.isEmpty())
+        if(Outgoing.isEmpty())
             this.typeOfNode = TypeOfNode.exit;
-        else
+        if(!Incoming.isEmpty() && !Outgoing.isEmpty())
             this.typeOfNode = TypeOfNode.regular;
     }
 
@@ -52,7 +48,22 @@ public class Node implements Serializable {
         this.Outgoing.add(connection);
     }
 
-//    public void readIncoming(int n) {
+    public int getId() {
+        return id;
+    }
+    public String getName() {
+        return name;
+    }
+    public TypeOfNode getTypeOfNode(){
+        return this.typeOfNode;
+    }
+    public ArrayList getIncoming() {
+        return Incoming;
+    }
+    public ArrayList getOutgoing() {
+        return Outgoing;
+    }
+    //    public void readIncoming(int n) {
 //                Scanner s = new Scanner(System.in);
 //                for (int i = 0; i < n ; i++) {
 //                    Node pom = new Node();
@@ -85,40 +96,4 @@ public class Node implements Serializable {
 //            Outgoing.add(con);
 //        }
 //    }
-
-    public int getId() {
-        return id;
-    }
-    public String getName() {
-        return name;
-    }
-    public TypeOfNode getTypeOfNode(){
-        return this.typeOfNode;
-    }
-    public ArrayList getIncoming() {
-        if(Incoming.isEmpty()){
-            System.out.println("Nie ma wchodzących");
-            return null;
-        }
-        else {
-            System.out.println("Wchodzace");
-            for (Connection aIncoming : Incoming) {
-
-                System.out.println("Z " + aIncoming.getFrom() + " do " + aIncoming.getTo());
-                System.out.println("Koszt polaczenia " + aIncoming.getValue());
-            }
-            return Incoming;
-        }
-    }
-    public void getOutgoing() {
-        if(Outgoing.isEmpty())
-            System.out.println("Nie ma wychodzących");
-        else {
-            System.out.println("Wychodzace");
-            for (Connection aOutgoing : Outgoing) {
-                System.out.println("Z " + aOutgoing.getFrom() + " do " + aOutgoing.getTo());
-                System.out.println("Koszt polaczenia " + aOutgoing.getValue());
-            }
-        }
-    }
 }

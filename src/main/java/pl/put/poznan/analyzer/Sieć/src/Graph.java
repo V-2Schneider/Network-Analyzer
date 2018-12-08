@@ -13,12 +13,10 @@ public class Graph {
     }
 
     public HashMap<Integer,Node> getMapOfNodes() {
-        System.out.println(MapOfNodes);
         return MapOfNodes;
     }
 
     public HashMap<Integer,Connection> getMapOfConnections() {
-        System.out.println(MapOfConnections);
         return MapOfConnections;
     }
 
@@ -31,8 +29,8 @@ public class Graph {
     }
 
     public void addConnection(int id_from, int id_to, int value){
-        //Numery połączeń generowane automatycznie jako kolejne liczby (Map.size())
-        //Połączenie musi być zapisane w Mapie grafu, oraz w listach odpowiednich Node'ów.
+        //Numery połączeń generowane automatycznie jako kolejne liczby (z Map.size()), są tworzone na potrzeby przechowywania w HashMap.
+        //Połączenie musi być zapisane w Mapie grafu, oraz w listach odpowiednich Node'ów. (wg założeń projektu)
 
         Node from = MapOfNodes.get(id_from);
         Node to = MapOfNodes.get(id_to);
