@@ -39,5 +39,7 @@ public class Graph {
         MapOfConnections.put(MapOfConnections.size(), connection);
         from.addToOutgoing(connection);
         to.addToIncoming(connection);
+        from.setType();
+        to.setType();
     }
 }

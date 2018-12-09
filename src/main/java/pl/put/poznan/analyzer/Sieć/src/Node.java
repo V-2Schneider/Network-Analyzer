@@ -1,21 +1,20 @@
 package pl.put.poznan.analyzer.Sieć.src;
 
-import org.apache.jasper.tagplugins.jstl.core.Out;
-
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Node implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    private static AtomicInteger sequence = new AtomicInteger(0);
+    private static AtomicInteger sequence   = new AtomicInteger(0);
+    private static java.lang.String NODE_TYPE_REGULAR = "regular";
+    private static java.lang.String NODE_TYPE_ENTRY   = "entry";
+    private static java.lang.String NODE_TYPE_EXIT    = "exit";
 
     private int id;
-    private String name;
-    private TypeOfNode typeOfNode;
+    private java.lang.String name;
+    private String typeOfNode;
     private ArrayList<Connection> Incoming;
     private ArrayList<Connection> Outgoing;
 
@@ -23,7 +22,7 @@ public class Node implements Serializable {
         return sequence.incrementAndGet();
     }
 
-    public Node(String name) {
+    public Node(java.lang.String name) {
         this.name = name;
         this.id = nextInSequence();
         this.Incoming = new ArrayList<>();
@@ -33,11 +32,11 @@ public class Node implements Serializable {
 
     public void setType() {
         if(Incoming.isEmpty())
-            this.typeOfNode = TypeOfNode.entry;
+            this.typeOfNode = Node.NODE_TYPE_ENTRY;
         if(Outgoing.isEmpty())
-            this.typeOfNode = TypeOfNode.exit;
+            this.typeOfNode = Node.NODE_TYPE_EXIT;
         if(!Incoming.isEmpty() && !Outgoing.isEmpty())
-            this.typeOfNode = TypeOfNode.regular;
+            this.typeOfNode = Node.NODE_TYPE_REGULAR;
     }
 
     public void addToIncoming(Connection connection){
@@ -51,10 +50,10 @@ public class Node implements Serializable {
     public int getId() {
         return id;
     }
-    public String getName() {
+    public java.lang.String getName() {
         return name;
     }
-    public TypeOfNode getTypeOfNode(){
+    public String getTypeOfNode(){
         return this.typeOfNode;
     }
     public ArrayList getIncoming() {
