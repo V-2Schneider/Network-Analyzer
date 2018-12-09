@@ -57,11 +57,11 @@ public class Node implements Serializable {
     public TypeOfNode getTypeOfNode(){
         return this.typeOfNode;
     }
-    public ArrayList getIncoming() {
-        return Incoming;
+    public ArrayList<Connection> getIncoming() {
+        return this.Incoming;
     }
-    public ArrayList getOutgoing() {
-        return Outgoing;
+    public ArrayList<Connection> getOutgoing() {
+        return this.Outgoing;
     }
     //    public void readIncoming(int n) {
 //                Scanner s = new Scanner(System.in);

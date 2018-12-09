@@ -26,6 +26,17 @@ public class  Main {
         graph.addConnection(1,2,21);
         graph.addConnection(2,3,37);
 
+
+        // szukanie sciezki Greedy
+        List<Connection> szukanie = Search.GreedySeach(1,3,graph.getMapOfNodes());
+        System.out.print(szukanie.get(0).getFrom().getId());
+        for (Connection res : szukanie ) {
+            System.out.print(" -> " + res.getTo().getId());
+        }
+        System.out.println("");
+        // koniec szukania ścieżki Greedy
+
+
         System.out.println("Parsuje...");
         Parser.parseGraphToJson(graph);
 
