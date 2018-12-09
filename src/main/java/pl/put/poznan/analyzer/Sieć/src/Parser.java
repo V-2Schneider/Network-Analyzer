@@ -7,8 +7,13 @@ import com.google.gson.JsonParser;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration;
+
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -28,7 +33,18 @@ public class Parser {
     public static String JSON_HEADER_NODE_NAME = "name";
     public static String JSON_HEADER_NODE_TYPE = "type";
 
-    public static void parseGraphToJson(Graph graph){
+    public static String readFile(String path) throws IOException {
+        byte[] encoded = Files.readAllBytes(Paths.get(path));
+        return new String(encoded, Charset.defaultCharset());
+    }
+
+    public static void writeToFile(String path, String toWrite) throws IOException {
+        FileWriter fileWriter = new FileWriter(path);
+        fileWriter.write(toWrite);
+        fileWriter.close();
+    }
+
+    public static String parseGraphToJsonString(Graph graph) throws IOException {
 
         JSONObject jsonGraph = new JSONObject();
         JSONObject jsonConnections = new JSONObject();
@@ -72,14 +88,20 @@ public class Parser {
         JsonElement je = jp.parse(jsonString);
         String prettyJsonString = gson.toJson(je);
 
-        //System.out.println(prettyJsonString);
+        return prettyJsonString;
+    }
+    public static Graph parseJsonStringToGraph(String jsonString){
+        Graph graph = new Graph();
 
-        try(FileWriter file = new FileWriter("json.txt")){
-            file.write(prettyJsonString);
-            System.out.println("Successfully Copied JSON Object to File...");
-            System.out.println("\nJSON Object: " + prettyJsonString);
-        } catch (IOException e) {
-            e.printStackTrace();
+        JSONObject jsonGraph = new JSONObject(jsonString);
+        JSONObject jsonConnections = new JSONObject(jsonGraph.get(JSON_HEADER_GRAPH));
+        JSONArray jsonConnectionsArray = new JSONArray(jsonConnections);
+
+        for(int i=0;i<jsonConnectionsArray.length();i++){
+            JSONObject jsonConnection = new JSONObject(jsonConnectionsArray.get(i));
+            jsonConnection.get(JSON_HEADER_CONNECTION_ID);
+//            Connection connection = new Connection();
         }
+        return null;
     }
 }

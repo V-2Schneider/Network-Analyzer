@@ -3,7 +3,8 @@ package pl.put.poznan.analyzer.Sieć.src;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+
+import static pl.put.poznan.analyzer.Sieć.src.Parser.readFile;
 
 public class  Main {
     public static List<Node> nudesy = new ArrayList<>();
@@ -27,7 +28,19 @@ public class  Main {
         graph.addConnection(2,3,37);
 
         System.out.println("Parsuje...");
-        Parser.parseGraphToJson(graph);
+        String output = Parser.parseGraphToJsonString(graph);
+
+        //test wypisywania
+        System.out.println(output);
+
+        //test zapisu
+        Parser.writeToFile("json.txt",output);
+
+        //test odczytu
+        String read = readFile("json.txt");
+        System.out.println(read);
+
+        //test parsowania JsonString do graph.
 
 //        //wprowadzanie
 //        Scanner s = new Scanner(System.in);
