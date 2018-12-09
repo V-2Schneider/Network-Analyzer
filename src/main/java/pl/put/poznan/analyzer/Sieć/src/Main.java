@@ -1,5 +1,8 @@
 package pl.put.poznan.analyzer.Sieć.src;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +12,12 @@ public class  Main {
     public static List<Node> nudesy = new ArrayList<>();
     public static int p,ent,outt;
 
+    // logger
+    static Logger log = LoggerFactory.getLogger(Search.class);
+
     public static void main(String[] args) throws IOException {
+
+        log.info("Uruchomiono serwer");
 
         Graph graph = new Graph();
 
@@ -23,22 +31,31 @@ public class  Main {
         graph.addNode(b);
         graph.addNode(c);
 
+        log.info("dowano wierzchołki");
+
         graph.addConnection(1,2,21);
         graph.addConnection(2,3,37);
 
+        log.info("dodano połączenia");
 
         // szukanie sciezki Greedy
         List<Connection> szukanie = Search.GreedySeach(1,3,graph.getMapOfNodes());
-        System.out.print(szukanie.get(0).getFrom().getId());
-        for (Connection res : szukanie ) {
-            System.out.print(" -> " + res.getTo().getId());
+        if(szukanie.size() >0){
+            System.out.print(szukanie.get(0).getFrom().getId());
+            for (Connection res : szukanie ) {
+             System.out.print(" -> " + res.getTo().getId());
+            }
+            System.out.println("");
         }
-        System.out.println("");
         // koniec szukania ścieżki Greedy
+
+        log.info("rozpoczęcie parsowania");
 
 
         System.out.println("Parsuje...");
         Parser.parseGraphToJson(graph);
+
+        log.info("parsowanie zakończone");
 
 //        //wprowadzanie
 //        Scanner s = new Scanner(System.in);

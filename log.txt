@@ -1,0 +1,11 @@
+166  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+168  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+168  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+169  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Uruchomiono serwer
+175  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - dowano wierzchołki
+175  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - dodano połączenia
+176  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+176  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+176  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+176  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - rozpoczęcie parsowania
+234  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - parsowanie zakończone
