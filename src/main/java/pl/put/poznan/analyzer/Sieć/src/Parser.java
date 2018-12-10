@@ -33,6 +33,8 @@ public class Parser {
     public static String JSON_HEADER_NODE_NAME = "name";
     public static String JSON_HEADER_NODE_TYPE = "type";
 
+    public static String JSON_HEADER_REQUEST = "path_request";
+
     public static String readFile(String path) throws IOException {
         byte[] encoded = Files.readAllBytes(Paths.get(path));
         return new String(encoded, Charset.defaultCharset());
@@ -94,14 +96,34 @@ public class Parser {
         Graph graph = new Graph();
 
         JSONObject jsonGraph = new JSONObject(jsonString);
-        JSONObject jsonConnections = new JSONObject(jsonGraph.get(JSON_HEADER_GRAPH));
-        JSONArray jsonConnectionsArray = new JSONArray(jsonConnections);
+        JSONArray jsonConnectionsArray = jsonGraph.getJSONObject(JSON_HEADER_GRAPH)
+                .getJSONArray(JSON_HEADER_CONNECTIONS);
 
-        for(int i=0;i<jsonConnectionsArray.length();i++){
-            JSONObject jsonConnection = new JSONObject(jsonConnectionsArray.get(i));
-            jsonConnection.get(JSON_HEADER_CONNECTION_ID);
-//            Connection connection = new Connection();
+        for(int i = 0; i < jsonConnectionsArray.length(); i++){
+            JSONObject jsonConnection = jsonConnectionsArray.getJSONObject(i);
+            JSONObject jsonFrom = jsonConnection.getJSONObject(JSON_HEADER_FROM);
+            JSONObject jsonTo = jsonConnection.getJSONObject(JSON_HEADER_TO);
+
+            Node from   = new Node(jsonFrom.getInt(JSON_HEADER_NODE_ID), jsonFrom.getString(JSON_HEADER_NODE_NAME), jsonFrom.getString(JSON_HEADER_NODE_TYPE));
+            Node to     = new Node(jsonTo.getInt(JSON_HEADER_NODE_ID), jsonTo.getString(JSON_HEADER_NODE_NAME), jsonTo.getString(JSON_HEADER_NODE_TYPE));
+
+            graph.addNode(from);
+            graph.addNode(to);
+            graph.addConnection(from.getId(),to.getId(),jsonConnection.getInt(JSON_HEADER_VALUE));
         }
-        return null;
+        return graph;
+    }
+    public static String parseNodesToRequest(Node from, Node to){
+        JSONObject jsonRequest = new JSONObject();
+        JSONObject jsonNode = new JSONObject();
+
+        jsonNode.put(JSON_HEADER_NODE_NAME,from.getName());
+        jsonNode.put(JSON_HEADER_NODE_TYPE,from.getTypeOfNode());
+        jsonNode.put(JSON_HEADER_NODE_ID,from.getId());
+
+//        jsonRequest.put(JSON_HEADER_REQUEST,)
+    }
+    public static ArrayList<Node> parseRequestToNodes(String jsonString){
+
     }
 }

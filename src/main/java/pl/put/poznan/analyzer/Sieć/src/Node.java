@@ -13,7 +13,7 @@ public class Node implements Serializable {
     private static java.lang.String NODE_TYPE_EXIT    = "exit";
 
     private int id;
-    private java.lang.String name;
+    private String name;
     private String typeOfNode;
     private ArrayList<Connection> Incoming;
     private ArrayList<Connection> Outgoing;
@@ -22,9 +22,23 @@ public class Node implements Serializable {
         return sequence.incrementAndGet();
     }
 
-    public Node(java.lang.String name) {
+    @Override
+    public String toString() {
+        return "node_id_" + id + "_name_" + name + "_type_" + typeOfNode;
+    }
+
+    public Node(String name) {
         this.name = name;
         this.id = nextInSequence();
+        this.Incoming = new ArrayList<>();
+        this.Outgoing = new ArrayList<>();
+        setType();
+    }
+
+    public Node(int id, String name, String typeOfNode) {
+        this.id = id;
+        this.name = name;
+        this.typeOfNode = typeOfNode;
         this.Incoming = new ArrayList<>();
         this.Outgoing = new ArrayList<>();
         setType();
