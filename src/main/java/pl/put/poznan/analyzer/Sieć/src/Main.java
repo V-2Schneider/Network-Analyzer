@@ -38,18 +38,25 @@ public class  Main {
 //        Parser.writeToFile("json.txt",output);
 
         //test odczytu
-        String read = readFile("json.txt");
+//        String read = readFile("json.txt");
 //        System.out.println(read);
 
         //test parsowania JsonString do graph.
-        Graph graph = Parser.parseJsonStringToGraph(read);
-        for(HashMap.Entry<Integer,Connection> entry: graph.getMapOfConnections().entrySet()) {
-            System.out.println("entry_key_" + entry.getKey().toString() + " , value : " + entry.getValue().toString() );
-        }
+//        Graph graph = Parser.parseJsonStringToGraph(read);
+//        for(HashMap.Entry<Integer,Connection> entry: graph.getMapOfConnections().entrySet()) {
+//            System.out.println("entry_key_" + entry.getKey().toString() + " , value : " + entry.getValue().toString() );
+//        }
+//
+//        for(HashMap.Entry<Integer,Node> entry: graph.getMapOfNodes().entrySet()){
+//            System.out.println("node_" + entry.getKey().toString() + ", value : " + entry.getValue().toString());
+//        }
 
-        for(HashMap.Entry<Integer,Node> entry: graph.getMapOfNodes().entrySet()){
-            System.out.println("node_" + entry.getKey().toString() + ", value : " + entry.getValue().toString());
-        }
+        //test parse nodes to JSON
+        Node a = new Node("papiez");
+        Node b = new Node("zawadiaka");
+
+        String output = Parser.parseNodesToRequest(a,b);
+        Parser.writeToFile("request2.txt",output);
 
 //        //wprowadzanie
 //        Scanner s = new Scanner(System.in);

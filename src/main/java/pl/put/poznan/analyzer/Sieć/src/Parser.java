@@ -57,23 +57,23 @@ public class Parser {
             //wypełnij jsonArrayConnections
 
             JSONObject jsonConnection       = new JSONObject();
-            JSONObject jsonConnectionFrom   = new JSONObject();
-            JSONObject jsonConnectionTo     = new JSONObject();
+            JSONObject jsonNodeFrom   = new JSONObject();
+            JSONObject jsonNodeTo     = new JSONObject();
 
             Node from   = entry.getValue().getFrom();
             Node to     = entry.getValue().getTo();
 
             jsonConnection.put(JSON_HEADER_CONNECTION_ID,entry.getKey());
 
-            jsonConnectionFrom.put(JSON_HEADER_NODE_ID,from.getId());
-            jsonConnectionFrom.put(JSON_HEADER_NODE_NAME,from.getName());
-            jsonConnectionFrom.put(JSON_HEADER_NODE_TYPE,from.getTypeOfNode());
-            jsonConnection.put(JSON_HEADER_FROM,jsonConnectionFrom);
+            jsonNodeFrom.put(JSON_HEADER_NODE_ID,from.getId());
+            jsonNodeFrom.put(JSON_HEADER_NODE_NAME,from.getName());
+            jsonNodeFrom.put(JSON_HEADER_NODE_TYPE,from.getTypeOfNode());
+            jsonConnection.put(JSON_HEADER_FROM,jsonNodeFrom);
 
-            jsonConnectionTo.put(JSON_HEADER_NODE_ID,to.getId());
-            jsonConnectionTo.put(JSON_HEADER_NODE_NAME,to.getName());
-            jsonConnectionTo.put(JSON_HEADER_NODE_TYPE,to.getTypeOfNode());
-            jsonConnection.put(JSON_HEADER_TO,jsonConnectionTo);
+            jsonNodeTo.put(JSON_HEADER_NODE_ID,to.getId());
+            jsonNodeTo.put(JSON_HEADER_NODE_NAME,to.getName());
+            jsonNodeTo.put(JSON_HEADER_NODE_TYPE,to.getTypeOfNode());
+            jsonConnection.put(JSON_HEADER_TO,jsonNodeTo);
 
             jsonConnection.put(JSON_HEADER_VALUE,entry.getValue().getValue());
 
@@ -115,15 +115,43 @@ public class Parser {
     }
     public static String parseNodesToRequest(Node from, Node to){
         JSONObject jsonRequest = new JSONObject();
-        JSONObject jsonNode = new JSONObject();
+        JSONObject jsonNodes = new JSONObject();
+        JSONObject jsonNodeFrom = new JSONObject();
+        JSONObject jsonNodeTo = new JSONObject();
 
-        jsonNode.put(JSON_HEADER_NODE_NAME,from.getName());
-        jsonNode.put(JSON_HEADER_NODE_TYPE,from.getTypeOfNode());
-        jsonNode.put(JSON_HEADER_NODE_ID,from.getId());
+        jsonNodeFrom.put(JSON_HEADER_NODE_NAME,from.getName());
+        jsonNodeFrom.put(JSON_HEADER_NODE_TYPE,from.getTypeOfNode());
+        jsonNodeFrom.put(JSON_HEADER_NODE_ID,from.getId());
 
-//        jsonRequest.put(JSON_HEADER_REQUEST,)
+        jsonNodes.put(JSON_HEADER_FROM,jsonNodeFrom);
+
+        jsonNodeTo.put(JSON_HEADER_NODE_NAME,to.getName());
+        jsonNodeTo.put(JSON_HEADER_NODE_TYPE,to.getTypeOfNode());
+        jsonNodeTo.put(JSON_HEADER_NODE_ID,to.getId());
+
+        jsonNodes.put(JSON_HEADER_TO,jsonNodeTo);
+
+        jsonRequest.put(JSON_HEADER_REQUEST,jsonNodes);
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        JsonParser jp = new JsonParser();
+        JsonElement je = jp.parse(jsonRequest.toString());
+        String prettyJsonString = gson.toJson(je);
+
+        return prettyJsonString;
     }
-    public static ArrayList<Node> parseRequestToNodes(String jsonString){
-
-    }
+//    public static ArrayList<Node> parseRequestToNodesList(String jsonString){
+//        JSONObject jsonRequest = new JSONObject(jsonString);
+//        JSONObject jsonNodes = jsonRequest.getJSONObject(JSON_HEADER_REQUEST);
+//
+//        JSONObject jsonNodeFrom = jsonNodes.getJSONObject(JSON_HEADER_FROM);
+//        JSONObject jsonNodeTo = jsonNodes.getJSONObject(JSON_HEADER_TO);
+//
+//        Node from = new Node(jsonNodeFrom.getInt(JSON_HEADER_NODE_ID),jsonNodeFrom.getString(JSON_HEADER_NODE_NAME),jsonNodeFrom.getString(JSON_HEADER_NODE_TYPE));
+//        Node to = new Node(jsonNodeTo.getInt(JSON_HEADER_NODE_ID),jsonNodeTo.getString(JSON_HEADER_NODE_NAME),jsonNodeTo.getString(JSON_HEADER_NODE_TYPE));
+//
+//        ArrayList<Node> list = new ArrayList<>();
+//        list.add(from);
+//        list.add(to);
+//    }
 }
