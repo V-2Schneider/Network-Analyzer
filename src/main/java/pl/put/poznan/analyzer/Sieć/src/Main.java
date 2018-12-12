@@ -1,8 +1,9 @@
 package pl.put.poznan.analyzer.Sieć.src;
 
+import com.google.gson.Gson;
+
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import static pl.put.poznan.analyzer.Sieć.src.Parser.readFile;
@@ -52,44 +53,40 @@ public class  Main {
 //        }
 
         //test parse nodes to JSON
-        Node a = new Node("papiez");
-        Node b = new Node("zawadiaka");
+//        Node a = new Node("papiez");
+//        Node b = new Node("zawadiaka");
+//
+//        String output = Parser.parseNodesToJsonString(a,b);
+//        Parser.writeToFile("request2.txt",output);
 
-        String output = Parser.parseNodesToRequest(a,b);
-        Parser.writeToFile("request2.txt",output);
+        //test parse json to nodes
+//        String read = readFile("nodes.txt");
+//        ArrayList<Node> list = Parser.parseJsonStringToNodes(read);
+//
+//        for(Node element: list){
+//            System.out.println(element.toString());
+//        }
 
-//        //wprowadzanie
-//        Scanner s = new Scanner(System.in);
-//        System.out.println("Gimme ilość nodes");
-//        p = s.nextInt();
-//        for (int i = 1; i <= p; i++) {
-//            System.out.println("Oto jest nudes nr " + i);
-//            Node n = new Node();
-//            n.setId(i);
-//            n.setName();
-//            System.out.println("Gimme ilość wchodzace");
-//            ent = s.nextInt();
-//            if (ent != 0) {
-//                n.readIncoming(ent);
-//            }
-//            System.out.println("Gimme ilość wychodzace");
-//            outt = s.nextInt();
-//            if (outt != 0) {
-//                n.readOutgoing(outt);
-//            }
-//            n.setType();
-//            nudesy.add(n);
+        //test parse Path to Json
+//        Node a = new Node("test_1");
+//        Node b = new Node("test_2");
+//        Node c = new Node("test_3");
+//        Node d = new Node("test_4");
 //
+//        ArrayList<Node> list = new ArrayList<>();
 //
-//        }
+//        list.add(a);
+//        list.add(b);
+//        list.add(c);
+//        list.add(d);
 //
-//        //wyświetlanie
-//        for (int i = 0; i < nudesy.size(); i++) {
-//            System.out.println("Oto jest " + nudesy.get(i).getName());
-//            nudesy.get(i).getIncoming();
-//            nudesy.get(i).getOutgoing();
-//            nudesy.get(i).getTypeOfNode();
-//        }
+//        Parser.writeToFile("PathTest.txt",Parser.parsePathToJsonString(list));
+
+        //test parse Json to Path
+        ArrayList<Node> list2 = Parser.parseJsonStringToPath(Parser.readFile("PathTest.txt"));
+        for(Node node: list2){
+            System.out.println(node.toString());
+        }
     }
 
 }

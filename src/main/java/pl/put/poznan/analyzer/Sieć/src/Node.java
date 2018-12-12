@@ -12,9 +12,9 @@ public class Node implements Serializable {
     private static java.lang.String NODE_TYPE_ENTRY   = "entry";
     private static java.lang.String NODE_TYPE_EXIT    = "exit";
 
-    private int id;
+    private int node_id;
     private String name;
-    private String typeOfNode;
+    private String type;
     private ArrayList<Connection> Incoming;
     private ArrayList<Connection> Outgoing;
 
@@ -24,21 +24,21 @@ public class Node implements Serializable {
 
     @Override
     public String toString() {
-        return "node_id_" + id + "_name_" + name + "_type_" + typeOfNode;
+        return "node_id_" + node_id + "_name_" + name + "_type_" + type;
     }
 
     public Node(String name) {
         this.name = name;
-        this.id = nextInSequence();
+        this.node_id = nextInSequence();
         this.Incoming = new ArrayList<>();
         this.Outgoing = new ArrayList<>();
         setType();
     }
 
-    public Node(int id, String name, String typeOfNode) {
-        this.id = id;
+    public Node(int node_id, String name, String typeOfNode) {
+        this.node_id = node_id;
         this.name = name;
-        this.typeOfNode = typeOfNode;
+        this.type = typeOfNode;
         this.Incoming = new ArrayList<>();
         this.Outgoing = new ArrayList<>();
         setType();
@@ -46,11 +46,11 @@ public class Node implements Serializable {
 
     public void setType() {
         if(Incoming.isEmpty())
-            this.typeOfNode = Node.NODE_TYPE_ENTRY;
+            this.type = Node.NODE_TYPE_ENTRY;
         if(Outgoing.isEmpty())
-            this.typeOfNode = Node.NODE_TYPE_EXIT;
+            this.type = Node.NODE_TYPE_EXIT;
         if(!Incoming.isEmpty() && !Outgoing.isEmpty())
-            this.typeOfNode = Node.NODE_TYPE_REGULAR;
+            this.type = Node.NODE_TYPE_REGULAR;
     }
 
     public void addToIncoming(Connection connection){
@@ -61,14 +61,14 @@ public class Node implements Serializable {
         this.Outgoing.add(connection);
     }
 
-    public int getId() {
-        return id;
+    public int getNode_id() {
+        return node_id;
     }
     public java.lang.String getName() {
         return name;
     }
-    public String getTypeOfNode(){
-        return this.typeOfNode;
+    public String getType(){
+        return this.type;
     }
     public ArrayList getIncoming() {
         return Incoming;
@@ -83,7 +83,7 @@ public class Node implements Serializable {
 //                    Connection con = new Connection();
 //
 //                    con.setTo(this);                                //następnikiem jest this
-//                    System.out.println("id poprzednika:");          //poprzednika trzeba podać
+//                    System.out.println("node_id poprzednika:");          //poprzednika trzeba podać
 //                    pom.setId(s.nextInt());
 //                    con.setFrom(pom);
 //
@@ -100,7 +100,7 @@ public class Node implements Serializable {
 //            Connection con = new Connection();
 //
 //            con.setFrom(this);                               //poprzednikiem jest this
-//            System.out.println("id nastepnika:");            //następnika trzeba podać
+//            System.out.println("node_id nastepnika:");            //następnika trzeba podać
 //            pom.setId(s.nextInt());
 //            con.setTo(pom);
 //

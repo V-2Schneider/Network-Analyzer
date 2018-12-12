@@ -1,8 +1,6 @@
 package pl.put.poznan.analyzer.Sieć.src;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
 
 public class Graph {
     private HashMap<Integer,Node> MapOfNodes;
@@ -23,7 +21,7 @@ public class Graph {
 
     public void addNode(Node node){
         if(!MapOfNodes.containsValue(node)){
-            MapOfNodes.put(node.getId(),node);
+            MapOfNodes.put(node.getNode_id(),node);
         }
     }
 
