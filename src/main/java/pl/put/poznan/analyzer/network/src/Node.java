@@ -1,4 +1,4 @@
-package pl.put.poznan.analyzer.Sieć.src;
+package pl.put.poznan.analyzer.network.src;
 
 import java.io.Serializable;
 import java.util.ArrayList;

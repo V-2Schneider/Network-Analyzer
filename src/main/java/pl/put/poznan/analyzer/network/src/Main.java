@@ -1,11 +1,8 @@
-package pl.put.poznan.analyzer.Sieć.src;
+package pl.put.poznan.analyzer.network.src;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-
-import static pl.put.poznan.analyzer.Sieć.src.Parser.readFile;
 
 public class  Main {
     public static List<Node> nudesy = new ArrayList<>();

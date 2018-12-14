@@ -1,8 +1,6 @@
-package pl.put.poznan.analyzer.Sieć.src;
+package pl.put.poznan.analyzer.network.src;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
 
 public class Graph {
     private HashMap<Integer,Node> MapOfNodes;

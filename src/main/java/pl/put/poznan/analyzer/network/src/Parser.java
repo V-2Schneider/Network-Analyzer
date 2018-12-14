@@ -1,4 +1,4 @@
-package pl.put.poznan.analyzer.Sieć.src;
+package pl.put.poznan.analyzer.network.src;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -6,46 +6,69 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration;
 
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 
+/**
+ * Parser class is a container for constants and static utility methods used in NetworkAnalyzer.
+ * These methods are used for parsing objects of types Graph, Node and Connection to JSONObject and vice versa.
+ * They are used in our REST API.
+ */
 public class Parser {
 
+    // String constants
     public static String JSON_HEADER_GRAPH = "graph";
     public static String JSON_HEADER_CONNECTIONS = "connections";
-
     public static String JSON_HEADER_CONNECTION_ID= "connection_id";
     public static String JSON_HEADER_TO = "to";
     public static String JSON_HEADER_FROM = "from";
     public static String JSON_HEADER_VALUE = "value";
-
     public static String JSON_HEADER_NODE_ID = "node_id";
     public static String JSON_HEADER_NODE_NAME = "name";
     public static String JSON_HEADER_NODE_TYPE = "type";
-
     public static String JSON_HEADER_REQUEST = "path_request";
 
+    /**
+     * Parser class exists solely to store static methods used for parsing objects,
+     * therefore it should not be instantiated, so it's constructor is private.
+     */
+    private Parser() {
+    }
+
+    /**
+     * Static utility function for reading a text file as a String.
+     * @param path Path to the file (root is the project folder).
+     * @return {@link String} with file contents.
+     * @throws IOException .
+     */
     public static String readFile(String path) throws IOException {
         byte[] encoded = Files.readAllBytes(Paths.get(path));
         return new String(encoded, Charset.defaultCharset());
     }
 
+    /**
+     * Static utility function for writing a String to a text file.
+     * @param path Path to the file (root is the project folder).
+     * @param toWrite {@link String} to be written to the file.
+     * @throws IOException .
+     */
     public static void writeToFile(String path, String toWrite) throws IOException {
         FileWriter fileWriter = new FileWriter(path);
         fileWriter.write(toWrite);
         fileWriter.close();
     }
 
+    /**
+     * Static utility function for parsing an entire object of type {@link Graph} to a {@link String} containing a JSON representation of said graph.
+     * @param graph Object of type {@link Graph} that is to be parsed.
+     * @return {@link String} containing a JSON representation of parsed Graph.
+     * @throws IOException .
+     */
     public static String parseGraphToJsonString(Graph graph) throws IOException {
 
         JSONObject jsonGraph = new JSONObject();
