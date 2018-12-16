@@ -48,6 +48,27 @@ public class  Main {
             System.out.println("");
         }
         // koniec szukania ścieżki Greedy
+        
+        // szukanie sciezki BFS
+        List<Node> szukaniee = Search.BFS(1,4,graph.getMapOfNodes());
+        if(szukaniee.size() >0){
+            //System.out.print(szukaniee.get(0).getId());
+            for (Node nes : szukaniee ) {
+                System.out.print(nes.getId()+ " -> " );
+            }
+            System.out.println("");
+        }
+
+        // szukanie sciezki DFS
+        List<Node> szukanieee = Search.DFS(1,4,graph.getMapOfNodes());
+        if(szukanieee.size() >0){
+            //System.out.print(szukaniee.get(0).getId());
+            for (Node ness : szukanieee ) {
+                System.out.print(ness.getId()+ " -> " );
+            }
+            System.out.println("");
+        }
+        
 
         log.info("rozpoczęcie parsowania");
 
