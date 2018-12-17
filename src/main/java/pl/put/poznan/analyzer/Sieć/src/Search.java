@@ -53,6 +53,7 @@ public class Search {
 
         sRes = new ArrayList();
         notVisited =  new ArrayList<>();
+        sumValue = 0;
 
         for(int i = 0; i < _mapOfNode.size();i++)
             notVisited.add(false);
@@ -63,6 +64,11 @@ public class Search {
         else {
             Collections.reverse(sRes);
             log.info("Przeszukiwanie zakończone powodzeniem");
+         
+            for ( Connection res : sRes) {
+                sumValue += res.getValue();
+            }
+            System.out.print(sumValue+"    ");
         }
 
         return sRes;
@@ -122,6 +128,11 @@ public class Search {
         else {
             Collections.reverse(nRes);
             log.info("Przeszukiwanie zakończone powodzeniem");
+         
+            for ( Connection res : sRes) {
+                 sumValue += res.getValue();
+             }
+             System.out.print(sumValue+"    ");
         }
 
         return nRes;
@@ -153,10 +164,25 @@ public class Search {
             }
         }
         if (zm) {
+            int id = 0;
             for (int w = _mapOfNode.get(_exitNode).getId()-1; w != _mapOfNode.get(_entryNode).getId()-1; w = edgeTo[w]) {
                 nRes.add(_mapOfNode.get(_mapOfNode.get(w+1).getId()));
+             
+                if (id !=0) {
+                    for (int connectionNumber = 0; connectionNumber < _mapOfNode.get(_mapOfNode.get(w+1).getId()).getOutgoing().size(); connectionNumber++) {
+                        if (_mapOfNode.get(_mapOfNode.get(w+1).getId()).getOutgoing().get(connectionNumber).getTo().getId() == id) {
+                            sRes.add(_mapOfNode.get(_mapOfNode.get(w+1).getId()).getOutgoing().get(connectionNumber));
+                        }
+                    }
+                }
+                id =  _mapOfNode.get(w+1).getId();
             }
             nRes.add(_mapOfNode.get(_mapOfNode.get(_entryNode).getId()));
+            for (int connectionNumber = 0; connectionNumber < _mapOfNode.get(_mapOfNode.get(_entryNode).getId()).getOutgoing().size(); connectionNumber++) {
+                if (_mapOfNode.get(_mapOfNode.get(_entryNode).getId()).getOutgoing().get(connectionNumber).getTo().getId() == id) {
+                    sRes.add(_mapOfNode.get(_mapOfNode.get(_entryNode).getId()).getOutgoing().get(connectionNumber));
+                }
+            }
 
             return true;
         }
@@ -174,7 +200,7 @@ public class Search {
         log.info("Inicjalizacja DFS");
 
         sRes = new ArrayList();
-        nnRes = new ArrayList();
+        nRes = new ArrayList();
         notVisited =  new ArrayList<>();
         sumValue = 0;
 
@@ -187,6 +213,11 @@ public class Search {
         else {
             Collections.reverse(nnRes);
             log.info("Przeszukiwanie zakończone powodzeniem");
+         
+            for ( Connection res : sRes) {
+                sumValue += res.getValue();
+            }
+            System.out.print(sumValue+"    ");
         }
 
         return nnRes;
@@ -207,8 +238,9 @@ public class Search {
             int connectionNumber = -1;
             for (int i = 0; i < _mapOfNode.get(_entryNode).getOutgoing().size(); i++) {
                 if (_mapOfNode.get(_entryNode).getOutgoing().get(i).getTo().getId() == _exitNode) {
-                    nnRes.add(_mapOfNode.get(_mapOfNode.get(_entryNode).getOutgoing().get(i).getTo().getId()));
-                    nnRes.add(_mapOfNode.get(_mapOfNode.get(_entryNode).getId()));
+                    nRes.add(_mapOfNode.get(_mapOfNode.get(_entryNode).getOutgoing().get(i).getTo().getId()));
+                    nRes.add(_mapOfNode.get(_mapOfNode.get(_entryNode).getId()));
+                    sRes.add(_mapOfNode.get(_entryNode).getOutgoing().get(i));
                     return true;
                 } else if (!notVisited.get(_mapOfNode.get(_entryNode).getOutgoing().get(i).getTo().getId()-1)) {
                     nextNode = _mapOfNode.get(_entryNode).getOutgoing().get(i).getTo().getId();
@@ -217,7 +249,8 @@ public class Search {
                 if(nextNode != _entryNode) {
                     if (MakeDFS(nextNode, _exitNode, _mapOfNode)) {
                         //nRes.add(_mapOfNode.get(_mapOfNode.get(_entryNode).getOutgoing().get(connectionNumber).getTo().getId()));
-                        nnRes.add(_mapOfNode.get(_mapOfNode.get(_entryNode).getId()));
+                        nRes.add(_mapOfNode.get(_mapOfNode.get(_entryNode).getId()));
+                        sRes.add(_mapOfNode.get(_entryNode).getOutgoing().get(connectionNumber));
                         return true;
                     }
                 }
