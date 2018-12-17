@@ -8,6 +8,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.*;
 
+
+ /**
+ * This class allows you to find the path (containts all algorithms)
+ */
 public class Search {
 
     // logger
@@ -16,12 +20,29 @@ public class Search {
     //zmienne globalne
 
 
-
+    /**
+     * list of connections between nodes
+     */
     private static List<Connection> sRes;
+    /**
+     * list of nodes used as a result
+     */
     private static List<Node> nRes;
+    /**
+     * 
+     */
     private static List<Boolean> notVisited;
+    /**
+     * queue used in BFS 
+     */
     private static Queue<Integer> path;
+    /**
+     *  array containing a parents of Nodes (in BFS)
+     */
     private static int[] edgeTo;
+    /**
+     * path's value
+     */
     private static int sumValue;
 
     // ================ Greedy Search
@@ -76,6 +97,11 @@ public class Search {
 
 
     // ================== BFS
+    /**
+     * This method is used to find the most profitable path from entry to exit using BFS algorithm.
+     * @param _entryNode (node that is the beginning of the path), _exitNode (node that is the end of the path), network as HashMap
+     * @return shortest path (list of nodes) or null if path can't be found
+    */
     public static List<Node> BFS(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode) {
         log.info("Inicjalizacja BFS");
 
@@ -100,7 +126,12 @@ public class Search {
 
         return nRes;
     }
-
+    
+    /**
+     * Find the path by using BFS algorithm (with queue)
+     * @param _entryNode (node that is the beginning of the path), _exitNode (node that is the end of the path), network as HashMap
+     * @return true when the path exists or false if path can't be found
+     */
     private static boolean MakeBFS(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode){
         boolean zm = false;
         notVisited.set(_entryNode-1,true);
@@ -134,7 +165,11 @@ public class Search {
 
 
     // ================== DFS
-
+    /**
+     * This method is used to find the most profitable path from entry to exit using DFS algorithm.
+     * @param _entryNode (node that is the beginning of the path), _exitNode (node that is the end of the path), network as HashMap
+     * @return shortest path (list of nodes) or null if path can't be found
+    */
     public static List<Node> DFS(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode) {
         log.info("Inicjalizacja DFS");
 
@@ -156,7 +191,14 @@ public class Search {
 
         return nnRes;
     }
+    
+     /**
+     * Find the path by using recursive function for DFS
+     * @param _entryNode (node that is the beginning of the path), _exitNode (node that is the end of the path), network as HashMap
+     * @return true when the path exists or false if path can't be found
+     */
 
+    
     private static boolean MakeDFS(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode){
         notVisited.set(_entryNode-1,true);
         int nextNode;
