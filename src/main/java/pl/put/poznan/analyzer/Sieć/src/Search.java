@@ -46,7 +46,11 @@ public class Search {
     private static int sumValue;
 
     // ================ Greedy Search
-
+     /**
+      * This method is used to find the most profitable path from entry to exit using greedy algorithm.
+      * @param _entryNode (node that is the beginning of the path), _exitNode (node that is the end of the path), network as HashMap
+      * @return shortest path (list of nodes) or null if path can't be found, and -1 on value
+      * */
 
     public static Result GreedySeach(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode) {
         log.info("Inicjalizacja Greedy Searcha");
@@ -78,6 +82,12 @@ public class Search {
 
         return result;
     }
+
+     /**
+      * Find the path by using recursive function for GreedySearch
+      * @param _entryNode (node that is the beginning of the path), _exitNode (node that is the end of the path), network as HashMap
+      * @return true when the path exists or false if path can't be found
+      */
 
     private static boolean MakeGreedySearch(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode){
         notVisited.set(_entryNode-1,true);

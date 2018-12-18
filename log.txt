@@ -51,3 +51,17 @@
 168  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
 168  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - rozpoczęcie parsowania
 222  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - parsowanie zakończone
+156  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Uruchomiono serwer
+160  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - dowano wierzchołki
+160  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - dodano połączenia
+161  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+161  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+161  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+162  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+162  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+162  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+164  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja DFS
+164  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+164  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+164  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - rozpoczęcie parsowania
+214  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - parsowanie zakończone
