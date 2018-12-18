@@ -57,11 +57,11 @@ public class  Main {
         log.info("dodano połączenia");
 
         // szukanie sciezki Greedy
-        List<Connection> szukanie = Search.GreedySeach(1,3,graph.getMapOfNodes());
-        if(szukanie.size() >0){
-            System.out.print(szukanie.get(0).getFrom().getId());
-            for (Connection res : szukanie ) {
-             System.out.print(" -> " + res.getTo().getId());
+        Result szukanie = Search.GreedySeach(1,4,graph.getMapOfNodes());
+        if(szukanie.getValue() >0){
+
+            for (Node res :  szukanie.getNodes() ) {
+             System.out.print( res.getId() + " -> ");
             }
             System.out.println("");
         }
@@ -82,7 +82,7 @@ public class  Main {
 
         // szukanie sciezki DFS
         Result szukanieee = Search.DFS(1,4,graph.getMapOfNodes());
-        float sum =0;
+        sum =0;
         sum= szukanieee.getValue();
         System.out.println(sum);
         if(szukanieee.getNodes().size() >0){

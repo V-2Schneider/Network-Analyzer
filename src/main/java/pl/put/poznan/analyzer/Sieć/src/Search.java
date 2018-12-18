@@ -29,7 +29,7 @@ public class Search {
      */
     private static List<Node> nRes;
     /**
-     * 
+     * List of visited nodes in greedy search
      */
     private static List<Boolean> notVisited;
     /**
@@ -48,30 +48,35 @@ public class Search {
     // ================ Greedy Search
 
 
-    public static List<Connection> GreedySeach(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode) {
+    public static Result GreedySeach(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode) {
         log.info("Inicjalizacja Greedy Searcha");
 
-        sRes = new ArrayList();
-        notVisited =  new ArrayList<>();
+        sRes = new ArrayList<Connection>();
+        notVisited =  new ArrayList<Boolean>();
         sumValue = 0;
 
         for(int i = 0; i < _mapOfNode.size();i++)
             notVisited.add(false);
         log.info("Rozpoczęcie przeszukiwania");
-
-        if(!MakeGreedySearch(_entryNode,_exitNode,_mapOfNode))
-            log.info("Nie odnaleziono połączenia, zwrócono pustą liste");
-        else {
+        Result result;
+        if(!MakeGreedySearch(_entryNode,_exitNode,_mapOfNode)) {
+            log.info("Nie odnaleziono połączenia, zwrócono -1 w wartości");
+            result = new Result(-1, new ArrayList<Node>());
+        }else {
             Collections.reverse(sRes);
             log.info("Przeszukiwanie zakończone powodzeniem");
-         
+            List<Node> nody = new ArrayList<>();
+            nody.add(sRes.get(0).getFrom());
             for ( Connection res : sRes) {
                 sumValue += res.getValue();
+                nody.add(res.getTo());
             }
             System.out.print(sumValue+"    ");
+
+            result = new Result(sumValue,nody);
         }
 
-        return sRes;
+        return result;
     }
 
     private static boolean MakeGreedySearch(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode){
@@ -212,7 +217,7 @@ public class Search {
         if(!MakeDFS(_entryNode,_exitNode,_mapOfNode))
             log.info("Nie odnaleziono połączenia, zwrócono pustą liste");
         else {
-            Collections.reverse(nnRes);
+            Collections.reverse(nRes);
             log.info("Przeszukiwanie zakończone powodzeniem");
          
             for ( Connection res : sRes) {
