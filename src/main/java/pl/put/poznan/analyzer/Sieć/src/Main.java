@@ -70,7 +70,7 @@ public class  Main {
         // szukanie sciezki BFS
         Result szukaniee = Search.BFS(1,4,graph.getMapOfNodes());
         float sum =0;
-        sum= szukanieee.getValue();
+        sum= szukaniee.getValue();
         System.out.println(sum);
         if(szukaniee.getNodes().size() >0){
             //System.out.print(szukaniee.get(0).getId());
