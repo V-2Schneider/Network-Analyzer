@@ -3,6 +3,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * Class that controls the API of the application
+ */
+
 @RestController
 @RequestMapping("/foo")
 public class NetworkAnalyzerController {
