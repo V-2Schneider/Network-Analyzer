@@ -11,6 +11,11 @@ class Connection {
         this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return "connection_from_" + from.getName() + "_to_" + to.getName() + "_value_" + value;
+    }
+
     public Node getTo() {
         return to;
     }

@@ -20,7 +20,9 @@ public class Graph {
     }
 
     public void addNode(Node node){
-        MapOfNodes.put(node.getId(),node);
+        if(!MapOfNodes.containsValue(node)){
+            MapOfNodes.put(node.getId(),node);
+        }
     }
 
     public Node getNodeById(int id){
@@ -38,6 +40,8 @@ public class Graph {
         MapOfConnections.put(MapOfConnections.size(), connection);
         from.addToOutgoing(connection);
         to.addToIncoming(connection);
+        from.setType();
+        to.setType();
     }
 
 

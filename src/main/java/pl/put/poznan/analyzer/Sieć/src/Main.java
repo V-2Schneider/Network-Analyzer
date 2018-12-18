@@ -66,7 +66,7 @@ public class  Main {
             System.out.println("");
         }
         // koniec szukania ścieżki Greedy
-        
+
         // szukanie sciezki BFS
         Result szukaniee = Search.BFS(1,4,graph.getMapOfNodes());
         float sum =0;
@@ -92,7 +92,7 @@ public class  Main {
             }
             System.out.println("");
         }
-        
+
 
         log.info("rozpoczęcie parsowania");
 
