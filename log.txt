@@ -266,3 +266,27 @@
 236  [main] INFO  pl.put.poznan.analyzer.logic.Search - Przeszukiwanie zakończone powodzeniem
 236  [main] INFO  pl.put.poznan.analyzer.logic.Search - rozpoczęcie parsowania
 306  [main] INFO  pl.put.poznan.analyzer.logic.Search - parsowanie zakończone
+775  [main] INFO  p.p.p.a.a.NetworkAnalyzerApplication - Starting NetworkAnalyzerApplication on Deathstar with PID 8924 (started by Satan in C:\Users\Satan\Documents\STUDIA\sem 5\IO\Network-Analyzer)
+786  [main] DEBUG p.p.p.a.a.NetworkAnalyzerApplication - Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+787  [main] INFO  p.p.p.a.a.NetworkAnalyzerApplication - No active profile set, falling back to default profiles: default
+1005 [main] WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+1274 [main] ERROR o.s.boot.SpringApplication - Application startup failed
+org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:137)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at pl.put.poznan.analyzer.app.NetworkAnalyzerApplication.main(NetworkAnalyzerApplication.java:12)
+Caused by: org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.getEmbeddedServletContainerFactory(EmbeddedWebApplicationContext.java:189)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.createEmbeddedServletContainer(EmbeddedWebApplicationContext.java:162)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:134)
+	... 8 common frames omitted
+530  [main] INFO  p.p.p.a.a.NetworkAnalyzerApplication - Starting NetworkAnalyzerApplication on Deathstar with PID 8388 (started by Satan in C:\Users\Satan\Documents\STUDIA\sem 5\IO\Network-Analyzer)
+532  [main] DEBUG p.p.p.a.a.NetworkAnalyzerApplication - Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
+532  [main] INFO  p.p.p.a.a.NetworkAnalyzerApplication - No active profile set, falling back to default profiles: default
+2960 [main] INFO  p.p.p.a.a.NetworkAnalyzerApplication - Started NetworkAnalyzerApplication in 2.669 seconds (JVM running for 3.208)

@@ -2,6 +2,7 @@ package pl.put.poznan.analyzer.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import pl.put.poznan.analyzer.logic.Main;
 
 
 @SpringBootApplication(scanBasePackages = {"pl.put.poznan.analyzer.rest"})
