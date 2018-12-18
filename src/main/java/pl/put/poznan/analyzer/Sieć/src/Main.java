@@ -1,6 +1,4 @@
-package pl.put.poznan.analyzer.network.src;
-
-import com.google.gson.Gson;
+package pl.put.poznan.analyzer.Sieć.src;
 
 import java.io.IOException;
 import java.util.ArrayList;

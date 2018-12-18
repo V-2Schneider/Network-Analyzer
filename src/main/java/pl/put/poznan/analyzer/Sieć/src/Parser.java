@@ -1,4 +1,4 @@
-package pl.put.poznan.analyzer.network.src;
+package pl.put.poznan.analyzer.Sieć.src;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
