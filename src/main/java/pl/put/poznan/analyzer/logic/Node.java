@@ -9,12 +9,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class Node implements Serializable {
 
-    /**
-    * 
-    */
     private static final long serialVersionUID = 1L;
     /**
-    * 
+    * an int sequence's value (updated atomically)
     */
     private static AtomicInteger sequence   = new AtomicInteger(0);
     /**
