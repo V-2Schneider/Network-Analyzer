@@ -2,9 +2,13 @@ package pl.put.poznan.analyzer.logic;
 
 import java.util.HashMap;
 
+/**
+ * Klasa Graph - pola zawierające Hashmapę wierzchołków oraz ich połączeń(od; do; koszt)
+ */
 public class Graph {
     private HashMap<Integer,Node> MapOfNodes;
     private HashMap<Integer,Connection> MapOfConnections;
+
 
     public Graph() {
         MapOfNodes = new HashMap<Integer,Node>();
@@ -19,12 +23,19 @@ public class Graph {
         return MapOfConnections;
     }
 
+    /**
+     * @param node
+     */
     public void addNode(Node node){
         if(!MapOfNodes.containsValue(node)){
             MapOfNodes.put(node.getId(),node);
         }
     }
 
+    /**
+     * @param id
+     * @return
+     */
     public Node getNodeById(int id){
         return MapOfNodes.get(id);
     }

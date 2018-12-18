@@ -40,7 +40,7 @@ public class  Main {
         graph.addNode(g);
         graph.addNode(h);
 
-        log.info("dowano wierzchołki");
+        log.info("dodano wierzchołki");
 
         graph.addConnection(1,2,21);
         graph.addConnection(2,3,37);

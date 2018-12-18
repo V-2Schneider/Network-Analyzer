@@ -290,3 +290,26 @@ Caused by: org.springframework.context.ApplicationContextException: Unable to st
 532  [main] DEBUG p.p.p.a.a.NetworkAnalyzerApplication - Running with Spring Boot v1.5.9.RELEASE, Spring v4.3.13.RELEASE
 532  [main] INFO  p.p.p.a.a.NetworkAnalyzerApplication - No active profile set, falling back to default profiles: default
 2960 [main] INFO  p.p.p.a.a.NetworkAnalyzerApplication - Started NetworkAnalyzerApplication in 2.669 seconds (JVM running for 3.208)
+670  [main] INFO  pl.put.poznan.analyzer.logic.Search - Uruchomiono serwer
+670  [main] INFO  pl.put.poznan.analyzer.logic.Search - dowano wierzchołki
+670  [main] INFO  pl.put.poznan.analyzer.logic.Search - dodano połączenia
+670  [main] INFO  pl.put.poznan.analyzer.logic.Search - Inicjalizacja Greedy Searcha
+670  [main] INFO  pl.put.poznan.analyzer.logic.Search - Rozpoczęcie przeszukiwania
+670  [main] INFO  pl.put.poznan.analyzer.logic.Search - Przeszukiwanie zakończone powodzeniem
+670  [main] INFO  pl.put.poznan.analyzer.logic.Search - Inicjalizacja BFS
+670  [main] INFO  pl.put.poznan.analyzer.logic.Search - Rozpoczęcie przeszukiwania
+670  [main] INFO  pl.put.poznan.analyzer.logic.Search - Przeszukiwanie zakończone powodzeniem
+686  [main] INFO  pl.put.poznan.analyzer.logic.Search - Inicjalizacja DFS
+686  [main] INFO  pl.put.poznan.analyzer.logic.Search - Rozpoczęcie przeszukiwania
+686  [main] INFO  pl.put.poznan.analyzer.logic.Search - Przeszukiwanie zakończone powodzeniem
+686  [main] INFO  pl.put.poznan.analyzer.logic.Search - rozpoczęcie parsowania
+882  [main] INFO  pl.put.poznan.analyzer.logic.Search - parsowanie zakończone
+424  [main] INFO  pl.put.poznan.analyzer.logic.Search - Inicjalizacja DFS
+429  [main] INFO  pl.put.poznan.analyzer.logic.Search - Rozpoczęcie przeszukiwania
+429  [main] INFO  pl.put.poznan.analyzer.logic.Search - Przeszukiwanie zakończone powodzeniem
+439  [main] INFO  pl.put.poznan.analyzer.logic.Search - Inicjalizacja BFS
+439  [main] INFO  pl.put.poznan.analyzer.logic.Search - Rozpoczęcie przeszukiwania
+439  [main] INFO  pl.put.poznan.analyzer.logic.Search - Przeszukiwanie zakończone powodzeniem
+416  [main] INFO  pl.put.poznan.analyzer.logic.Search - Inicjalizacja Greedy Searcha
+431  [main] INFO  pl.put.poznan.analyzer.logic.Search - Rozpoczęcie przeszukiwania
+431  [main] INFO  pl.put.poznan.analyzer.logic.Search - Przeszukiwanie zakończone powodzeniem
