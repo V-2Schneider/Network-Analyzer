@@ -65,3 +65,190 @@
 164  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
 164  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - rozpoczęcie parsowania
 214  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - parsowanie zakończone
+489  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+489  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+489  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+609  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Uruchomiono serwer
+625  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - dowano wierzchołki
+625  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - dodano połączenia
+625  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+625  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+625  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+640  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+640  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+640  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+640  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja DFS
+640  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+640  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+640  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - rozpoczęcie parsowania
+859  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - parsowanie zakończone
+588  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Uruchomiono serwer
+602  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - dowano wierzchołki
+604  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - dodano połączenia
+612  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+613  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+614  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+616  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+617  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+621  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+626  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja DFS
+626  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+626  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+627  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - rozpoczęcie parsowania
+809  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - parsowanie zakończone
+516  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Uruchomiono serwer
+516  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - dowano wierzchołki
+531  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - dodano połączenia
+531  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+531  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+531  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+531  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+531  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+531  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+531  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja DFS
+531  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+531  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+531  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - rozpoczęcie parsowania
+735  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - parsowanie zakończone
+453  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+453  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+453  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+406  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+406  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+406  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+454  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+454  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+454  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+422  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+437  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+437  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+359  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+391  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+391  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+407  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+422  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+422  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+422  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+422  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+422  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+424  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+428  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+429  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+367  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+374  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+375  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+393  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+397  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+398  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+372  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+381  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+383  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+430  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+435  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+435  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+395  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja DFS
+400  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+401  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+423  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+428  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+429  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+506  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+511  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+512  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+425  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+430  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+431  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+491  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+496  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+496  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+490  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+494  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+495  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+414  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja DFS
+418  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+419  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+457  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+462  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+463  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+449  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+454  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+455  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+419  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+423  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+436  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+443  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+439  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+443  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+444  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+452  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+456  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+457  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+409  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja DFS
+412  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+412  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+430  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja DFS
+437  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+438  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+441  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+444  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+445  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+392  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+408  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+408  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+422  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+422  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+422  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+359  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+375  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+375  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+375  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+391  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+391  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+331  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+331  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+347  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+437  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+437  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+437  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+478  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja DFS
+493  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+493  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+423  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+423  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+423  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+390  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+390  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+390  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+501  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+501  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+501  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+421  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja DFS
+421  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+421  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+391  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+406  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+406  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+468  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+468  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+468  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+409  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja Greedy Searcha
+409  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+409  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+446  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+446  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+446  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+380  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja DFS
+380  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+380  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+391  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja DFS
+391  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+391  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+359  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja DFS
+359  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+359  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+500  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+500  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+500  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+379  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
+379  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
+379  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
