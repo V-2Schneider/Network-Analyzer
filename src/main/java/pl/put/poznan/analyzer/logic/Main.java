@@ -1,4 +1,4 @@
-package pl.put.poznan.analyzer.Sieć.src;
+package pl.put.poznan.analyzer.logic;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class  Main {
     public static List<Node> nudesy = new ArrayList<>();
@@ -57,7 +56,7 @@ public class  Main {
         log.info("dodano połączenia");
 
         // szukanie sciezki Greedy
-        Result szukanie = Search.GreedySeach(1,4,graph.getMapOfNodes());
+        PathResult szukanie = Search.GreedySeach(1,4,graph.getMapOfNodes());
         if(szukanie.getValue() >0){
 
             for (Node res :  szukanie.getNodes() ) {
@@ -68,7 +67,7 @@ public class  Main {
         // koniec szukania ścieżki Greedy
 
         // szukanie sciezki BFS
-        Result szukaniee = Search.BFS(1,4,graph.getMapOfNodes());
+        PathResult szukaniee = Search.BFS(1,4,graph.getMapOfNodes());
         float sum =0;
         sum= szukaniee.getValue();
         System.out.println(sum);
@@ -81,7 +80,7 @@ public class  Main {
         }
 
         // szukanie sciezki DFS
-        Result szukanieee = Search.DFS(1,4,graph.getMapOfNodes());
+        PathResult szukanieee = Search.DFS(1,4,graph.getMapOfNodes());
         sum =0;
         sum= szukanieee.getValue();
         System.out.println(sum);
@@ -98,7 +97,7 @@ public class  Main {
 
 
         System.out.println("Parsuje...");
-        Parser.parseGraphToJson(graph);
+        Parser.parseGraphToJsonString(graph);
 
         log.info("parsowanie zakończone");
 

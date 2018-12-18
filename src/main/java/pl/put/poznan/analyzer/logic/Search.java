@@ -1,4 +1,4 @@
-package pl.put.poznan.analyzer.Sieć.src;
+package pl.put.poznan.analyzer.logic;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,15 +23,15 @@ public class  Search {
     /**
      * list of connections between nodes
      */
-    private static List<Connection> sRes;
+    private static ArrayList<Connection> sRes;
     /**
      * list of nodes used as a result
      */
-    private static List<Node> nRes;
+    private static ArrayList<Node> nRes;
     /**
      * List of visited nodes in greedy search
      */
-    private static List<Boolean> notVisited;
+    private static ArrayList<Boolean> notVisited;
     /**
      * queue used in BFS 
      */
@@ -52,7 +52,7 @@ public class  Search {
       * @return shortest path (list of nodes) or null if path can't be found, and -1 on value
       * */
 
-    public static Result GreedySeach(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode) {
+    public static PathResult GreedySeach(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode) {
         log.info("Inicjalizacja Greedy Searcha");
 
         sRes = new ArrayList<Connection>();
@@ -62,14 +62,14 @@ public class  Search {
         for(int i = 0; i < _mapOfNode.size();i++)
             notVisited.add(false);
         log.info("Rozpoczęcie przeszukiwania");
-        Result result;
+        PathResult pathResult;
         if(!MakeGreedySearch(_entryNode,_exitNode,_mapOfNode)) {
             log.info("Nie odnaleziono połączenia, zwrócono -1 w wartości");
-            result = new Result(-1, new ArrayList<Node>());
+            pathResult = new PathResult(-1, new ArrayList<Node>());
         }else {
             Collections.reverse(sRes);
             log.info("Przeszukiwanie zakończone powodzeniem");
-            List<Node> nody = new ArrayList<>();
+            ArrayList<Node> nody = new ArrayList<>();
             nody.add(sRes.get(0).getFrom());
             for ( Connection res : sRes) {
                 sumValue += res.getValue();
@@ -77,10 +77,10 @@ public class  Search {
             }
             System.out.print(sumValue+"    ");
 
-            result = new Result(sumValue,nody);
+            pathResult = new PathResult(sumValue,nody);
         }
 
-        return result;
+        return pathResult;
     }
 
      /**
@@ -123,11 +123,11 @@ public class  Search {
      * @param _entryNode (node that is the beginning of the path), _exitNode (node that is the end of the path), network as HashMap
      * @return shortest path (list of nodes) or null if path can't be found
     */
-    public static Result BFS(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode) {
+    public static PathResult BFS(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode) {
         log.info("Inicjalizacja BFS");
 
-        sRes = new ArrayList();
-        nRes = new ArrayList();
+        sRes = new ArrayList<>();
+        nRes = new ArrayList<>();
         path = new LinkedList<>();
         edgeTo = new int[_mapOfNode.size()];
         notVisited =  new ArrayList<>();
@@ -151,7 +151,7 @@ public class  Search {
         }
 
         //return nRes;
-        return new Result(sumValue, nRes);
+        return new PathResult(sumValue, nRes);
     }
     
     /**
@@ -212,7 +212,7 @@ public class  Search {
      * @param _entryNode (node that is the beginning of the path), _exitNode (node that is the end of the path), network as HashMap
      * @return shortest path (list of nodes) or null if path can't be found
     */
-    public static Result DFS(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode) {
+    public static PathResult DFS(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode) {
         log.info("Inicjalizacja DFS");
 
         sRes = new ArrayList();
@@ -237,7 +237,7 @@ public class  Search {
         }
 
         //return nnRes;
-        return new Result(sumValue, nRes);
+        return new PathResult(sumValue, nRes);
     }
     
      /**

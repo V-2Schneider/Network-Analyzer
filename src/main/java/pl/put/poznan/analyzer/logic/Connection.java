@@ -1,4 +1,4 @@
-package pl.put.poznan.analyzer.Sieć.src;
+package pl.put.poznan.analyzer.logic;
 
 class Connection {
     private Node from;

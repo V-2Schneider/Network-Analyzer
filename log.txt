@@ -252,3 +252,17 @@
 379  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Inicjalizacja BFS
 379  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Rozpoczęcie przeszukiwania
 379  [main] INFO  p.p.poznan.analyzer.Sieć.src.Search - Przeszukiwanie zakończone powodzeniem
+213  [main] INFO  pl.put.poznan.analyzer.logic.Search - Uruchomiono serwer
+220  [main] INFO  pl.put.poznan.analyzer.logic.Search - dowano wierzchołki
+221  [main] INFO  pl.put.poznan.analyzer.logic.Search - dodano połączenia
+221  [main] INFO  pl.put.poznan.analyzer.logic.Search - Inicjalizacja Greedy Searcha
+226  [main] INFO  pl.put.poznan.analyzer.logic.Search - Rozpoczęcie przeszukiwania
+226  [main] INFO  pl.put.poznan.analyzer.logic.Search - Przeszukiwanie zakończone powodzeniem
+231  [main] INFO  pl.put.poznan.analyzer.logic.Search - Inicjalizacja BFS
+231  [main] INFO  pl.put.poznan.analyzer.logic.Search - Rozpoczęcie przeszukiwania
+231  [main] INFO  pl.put.poznan.analyzer.logic.Search - Przeszukiwanie zakończone powodzeniem
+236  [main] INFO  pl.put.poznan.analyzer.logic.Search - Inicjalizacja DFS
+236  [main] INFO  pl.put.poznan.analyzer.logic.Search - Rozpoczęcie przeszukiwania
+236  [main] INFO  pl.put.poznan.analyzer.logic.Search - Przeszukiwanie zakończone powodzeniem
+236  [main] INFO  pl.put.poznan.analyzer.logic.Search - rozpoczęcie parsowania
+306  [main] INFO  pl.put.poznan.analyzer.logic.Search - parsowanie zakończone

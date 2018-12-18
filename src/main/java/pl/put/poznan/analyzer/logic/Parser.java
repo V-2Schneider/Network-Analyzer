@@ -1,4 +1,4 @@
-package pl.put.poznan.analyzer.Sieć.src;
+package pl.put.poznan.analyzer.logic;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -7,7 +7,6 @@ import com.google.gson.JsonParser;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import javax.xml.transform.Result;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -207,11 +206,11 @@ public class Parser {
     }
 
     /**
-     * Returns a {@link String} containing a JSON representation of a {@link _Result}
-     * @param result object of type {@link _Result} representing a path and its cost.
-     * @return a {@link String} containing a JSON representation of a {@link _Result}
+     * Returns a {@link String} containing a JSON representation of a {@link PathResult}
+     * @param result object of type {@link PathResult} representing a path and its cost.
+     * @return a {@link String} containing a JSON representation of a {@link PathResult}
      */
-    public static String parseResultToJsonString(Result result){
+    public static String parseResultToJsonString(PathResult result){
 
         JSONObject jsonResult = new JSONObject();
         JSONArray jsonNodes = new JSONArray();
@@ -239,9 +238,9 @@ public class Parser {
         return prettyJsonString;
     }
 
-    public static _Result parseJsonStringToResult(String jsonString){
+    public static PathResult parseJsonStringToResult(String jsonString){
         JSONObject json = new JSONObject(jsonString);
-        _Result result = new _Result();
+        PathResult result = new PathResult();
 
         ArrayList<Node> list = new ArrayList<>();
         JSONArray jsonArray = json.getJSONArray(JSON_HEADER_NODES);
