@@ -108,7 +108,7 @@ public class Search {
      * @param _entryNode (node that is the beginning of the path), _exitNode (node that is the end of the path), network as HashMap
      * @return shortest path (list of nodes) or null if path can't be found
     */
-    public static List<Node> BFS(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode) {
+    public static Result BFS(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode) {
         log.info("Inicjalizacja BFS");
 
         sRes = new ArrayList();
@@ -132,10 +132,11 @@ public class Search {
             for ( Connection res : sRes) {
                  sumValue += res.getValue();
              }
-             System.out.print(sumValue+"    ");
+             //System.out.print(sumValue+"    ");
         }
 
-        return nRes;
+        //return nRes;
+        return new Result(sumValue, nRes);
     }
     
     /**
@@ -196,7 +197,7 @@ public class Search {
      * @param _entryNode (node that is the beginning of the path), _exitNode (node that is the end of the path), network as HashMap
      * @return shortest path (list of nodes) or null if path can't be found
     */
-    public static List<Node> DFS(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode) {
+    public static Result DFS(int _entryNode, int _exitNode, HashMap<Integer,Node> _mapOfNode) {
         log.info("Inicjalizacja DFS");
 
         sRes = new ArrayList();
@@ -217,10 +218,11 @@ public class Search {
             for ( Connection res : sRes) {
                 sumValue += res.getValue();
             }
-            System.out.print(sumValue+"    ");
+            //System.out.print(sumValue+"    ");
         }
 
-        return nnRes;
+        //return nnRes;
+        return new Result(sumValue, nRes);
     }
     
      /**
