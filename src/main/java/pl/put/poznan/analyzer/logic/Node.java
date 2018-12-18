@@ -107,14 +107,14 @@ public class Node implements Serializable {
     }
     
     /**
-    * 
+    * method adds new connection to incoming list
     */
     public void addToIncoming(Connection connection){
         this.Incoming.add(connection);
     }
     
     /**
-    * 
+    * method adds new connection to outgoing list
     */
     public void addToOutgoing(Connection connection){
         this.Outgoing.add(connection);
