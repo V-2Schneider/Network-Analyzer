@@ -26,15 +26,33 @@ public class  Main {
         Node a = new Node("n1");
         Node b = new Node("n2");
         Node c = new Node("n3");
+        Node d = new Node("n4");
+        Node e = new Node("n5");
+        Node f = new Node("n6");
+        Node g = new Node("n7");
+        Node h = new Node("n8");
 
         graph.addNode(a);
         graph.addNode(b);
         graph.addNode(c);
+        graph.addNode(d);
+        graph.addNode(e);
+        graph.addNode(f);
+        graph.addNode(g);
+        graph.addNode(h);
 
         log.info("dowano wierzchołki");
 
         graph.addConnection(1,2,21);
         graph.addConnection(2,3,37);
+        graph.addConnection(3,4,15);
+        graph.addConnection(1,5,2);
+        graph.addConnection(5,6,3);
+        graph.addConnection(6,4,1);
+        graph.addConnection(1,7,40);
+        graph.addConnection(7,4,2);
+        graph.addConnection(4,8,1);
+
 
         log.info("dodano połączenia");
 
@@ -50,20 +68,26 @@ public class  Main {
         // koniec szukania ścieżki Greedy
         
         // szukanie sciezki BFS
-        List<Node> szukaniee = Search.BFS(1,4,graph.getMapOfNodes());
-        if(szukaniee.size() >0){
+        Result szukaniee = Search.BFS(1,4,graph.getMapOfNodes());
+        float sum =0;
+        sum= szukanieee.getValue();
+        System.out.println(sum);
+        if(szukaniee.getNodes().size() >0){
             //System.out.print(szukaniee.get(0).getId());
-            for (Node nes : szukaniee ) {
+            for (Node nes : szukaniee.getNodes() ) {
                 System.out.print(nes.getId()+ " -> " );
             }
             System.out.println("");
         }
 
         // szukanie sciezki DFS
-        List<Node> szukanieee = Search.DFS(1,4,graph.getMapOfNodes());
-        if(szukanieee.size() >0){
+        Result szukanieee = Search.DFS(1,4,graph.getMapOfNodes());
+        float sum =0;
+        sum= szukanieee.getValue();
+        System.out.println(sum);
+        if(szukanieee.getNodes().size() >0){
             //System.out.print(szukaniee.get(0).getId());
-            for (Node ness : szukanieee ) {
+            for (Node ness : szukanieee.getNodes() ) {
                 System.out.print(ness.getId()+ " -> " );
             }
             System.out.println("");
