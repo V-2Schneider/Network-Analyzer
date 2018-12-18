@@ -1,7 +1,6 @@
 package pl.put.poznan.analyzer.Sieć.src;
 
 import java.util.HashMap;
-import java.util.HashSet;
 
 public class Graph {
     private HashMap<Integer,Node> MapOfNodes;

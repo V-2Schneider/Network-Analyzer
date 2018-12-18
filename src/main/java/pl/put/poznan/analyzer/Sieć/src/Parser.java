@@ -13,6 +13,8 @@ import java.util.HashSet;
 
 public class Parser {
 
+    private static String prettyJsonString;
+
     public static void parseGraphToJson(Graph graph){
 
         JSONObject json = new JSONObject();
@@ -25,9 +27,9 @@ public class Parser {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         JsonParser jp = new JsonParser();
         JsonElement je = jp.parse(jsonString);
-        String prettyJsonString = gson.toJson(je);
+        prettyJsonString = gson.toJson(je);
 
-        System.out.println(prettyJsonString);
+      //  System.out.println(prettyJsonString);
 
 //        try(FileWriter file = new FileWriter("json.txt")){
 //            file.write(jsonString2);
@@ -37,4 +39,8 @@ public class Parser {
 //            e.printStackTrace();
 //        }
     }
+    String json(){
+        return prettyJsonString;
+    }
+
 }

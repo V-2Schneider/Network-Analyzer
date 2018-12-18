@@ -12,7 +12,7 @@ import java.util.*;
  /**
  * This class allows you to find the path (containts all algorithms)
  */
-public class Search {
+public class  Search {
 
     // logger
     static Logger log = LoggerFactory.getLogger(Search.class);
@@ -212,7 +212,7 @@ public class Search {
         if(!MakeDFS(_entryNode,_exitNode,_mapOfNode))
             log.info("Nie odnaleziono połączenia, zwrócono pustą liste");
         else {
-            Collections.reverse(nnRes);
+            Collections.reverse(nRes);
             log.info("Przeszukiwanie zakończone powodzeniem");
          
             for ( Connection res : sRes) {

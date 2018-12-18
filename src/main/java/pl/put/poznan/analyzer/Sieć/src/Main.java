@@ -82,8 +82,8 @@ public class  Main {
 
         // szukanie sciezki DFS
         Result szukanieee = Search.DFS(1,4,graph.getMapOfNodes());
-        float sum =0;
-        sum= szukanieee.getValue();
+        float sum1 =0;
+        sum1= szukanieee.getValue();
         System.out.println(sum);
         if(szukanieee.getNodes().size() >0){
             //System.out.print(szukaniee.get(0).getId());
