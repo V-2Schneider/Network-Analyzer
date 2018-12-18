@@ -61,7 +61,7 @@ public class Node implements Serializable {
         this.Outgoing.add(connection);
     }
 
-    public int getNode_id() {
+    public int getId() {
         return node_id;
     }
     public java.lang.String getName() {

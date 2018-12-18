@@ -81,7 +81,7 @@ public class  Main {
 //        Parser.writeToFile("PathTest.txt",Parser.parsePathToJsonString(list));
 
         //test parse Json to Path
-        ArrayList<Node> list2 = Parser.parseJsonStringToPath(Parser.readFile("PathTest.txt"));
+        ArrayList<Node> list2 = Parser.parseRequestToNodesList(Parser.readFile("PathTest.txt"));
         for(Node node: list2){
             System.out.println(node.toString());
         }

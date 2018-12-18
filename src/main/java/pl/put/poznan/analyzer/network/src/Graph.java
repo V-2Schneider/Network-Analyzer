@@ -21,7 +21,7 @@ public class Graph {
 
     public void addNode(Node node){
         if(!MapOfNodes.containsValue(node)){
-            MapOfNodes.put(node.getNode_id(),node);
+            MapOfNodes.put(node.getId(),node);
         }
     }
 
