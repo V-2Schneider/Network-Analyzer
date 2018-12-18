@@ -36,14 +36,14 @@ public class Parser {
 
     /**
      * Parser class exists solely to store static methods used for parsing objects,
-     * therefore it should not be instantiated, so it's constructor is private.
+     * therefore it should not be instantiated, so its constructor is private.
      */
     private Parser() {
     }
 
     /**
-     * Static utility function for reading a text file as a String.
-     * @param path Path to the file (root is the project folder).
+     * Returns a {@link String} object with the contents of a file.
+     * @param path path to the file (root is the project folder).
      * @return {@link String} with file contents.
      * @throws IOException .
      */
@@ -53,8 +53,8 @@ public class Parser {
     }
 
     /**
-     * Static utility function for writing a String to a text file.
-     * @param path Path to the file (root is the project folder).
+     * Writes a {@link String} to a text file.
+     * @param path path to the file (root is the project folder).
      * @param toWrite {@link String} to be written to the file.
      * @throws IOException .
      */
@@ -65,8 +65,8 @@ public class Parser {
     }
 
     /**
-     * Static utility function for parsing an entire object of type {@link Graph} to a {@link String} containing a JSON representation of said graph.
-     * @param graph Object of type {@link Graph} that is to be parsed.
+     * Returns a {@link String} containing a JSON representation of an object of type {@link Graph}.
+     * @param graph object of type {@link Graph} that is to be parsed.
      * @return {@link String} containing a JSON representation of parsed Graph.
      * @throws IOException .
      */
@@ -116,6 +116,13 @@ public class Parser {
 
         return prettyJsonString;
     }
+
+    /**
+     * Returns an object of type {@link Graph} from a {@link String} containing a JSON representation of said graph.
+     * @param jsonString object of type {@link String} that is to be parsed.
+     * @return extracted {@link Graph}
+     * @throws IOException .
+     */
     public static Graph parseJsonStringToGraph(String jsonString){
         Graph graph = new Graph();
 
@@ -137,6 +144,14 @@ public class Parser {
         }
         return graph;
     }
+
+    /**
+     * Returns an object of type {@link String} containing a JSON representation of a client's request for a path connecting two objects of type {@link Node}.
+     * @param from object of type {@link Node} representing the entry node for the sought path.
+     * @param to object of type {@link Node} representing the exit node for the sought path.
+     * @return {@link String} containing a JSON representation of a client's request for a path connecting two objects of type {@link Node}.
+     * @throws IOException .
+     */
     public static String parseNodesToRequest(Node from, Node to){
         JSONObject jsonRequest = new JSONObject();
         JSONObject jsonNodes = new JSONObject();
@@ -164,6 +179,13 @@ public class Parser {
 
         return prettyJsonString;
     }
+
+    /**
+     * Returns an {@link ArrayList<Node>} containing the nodes from client's JSON request.
+     * @param jsonString object of type {@link String} containing the JSON request sent from a client.
+     * @return {@link ArrayList<Node>} containing the nodes from client's JSON request.
+     * @throws IOException .
+     */
     public static ArrayList<Node> parseRequestToNodesList(String jsonString){
         JSONObject jsonRequest = new JSONObject(jsonString);
         JSONObject jsonNodes = jsonRequest.getJSONObject(JSON_HEADER_REQUEST);
