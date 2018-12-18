@@ -7,6 +7,7 @@ import com.google.gson.JsonParser;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import javax.xml.transform.Result;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -32,7 +33,9 @@ public class Parser {
     public static String JSON_HEADER_NODE_ID = "node_id";
     public static String JSON_HEADER_NODE_NAME = "name";
     public static String JSON_HEADER_NODE_TYPE = "type";
-    public static String JSON_HEADER_REQUEST = "path_request";
+    public static String JSON_HEADER_NODES= "nodes";
+//    public static String JSON_HEADER_REQUEST = "path_request";
+//    public static String JSON_HEADER_RESULT = "path_result";
 
     /**
      * Parser class exists solely to store static methods used for parsing objects,
@@ -118,7 +121,7 @@ public class Parser {
     }
 
     /**
-     * Returns an object of type {@link Graph} from a {@link String} containing a JSON representation of said graph.
+     * Returns a {@link Graph} extracted from a {@link String} containing a JSON representation of said graph.
      * @param jsonString object of type {@link String} that is to be parsed.
      * @return extracted {@link Graph}
      * @throws IOException .
@@ -146,14 +149,14 @@ public class Parser {
     }
 
     /**
-     * Returns an object of type {@link String} containing a JSON representation of a client's request for a path connecting two objects of type {@link Node}.
+     * Returns a {@link String} containing a JSON representation of a client's request for a path connecting two objects of type {@link Node}.
      * @param from object of type {@link Node} representing the entry node for the sought path.
      * @param to object of type {@link Node} representing the exit node for the sought path.
      * @return {@link String} containing a JSON representation of a client's request for a path connecting two objects of type {@link Node}.
      * @throws IOException .
      */
-    public static String parseNodesToRequest(Node from, Node to){
-        JSONObject jsonRequest = new JSONObject();
+    public static String parseNodesToJsonString(Node from, Node to){
+//        JSONObject jsonRequest = new JSONObject();
         JSONObject jsonNodes = new JSONObject();
         JSONObject jsonNodeFrom = new JSONObject();
         JSONObject jsonNodeTo = new JSONObject();
@@ -170,11 +173,11 @@ public class Parser {
 
         jsonNodes.put(JSON_HEADER_TO,jsonNodeTo);
 
-        jsonRequest.put(JSON_HEADER_REQUEST,jsonNodes);
+//        jsonRequest.put(JSON_HEADER_REQUEST,jsonNodes);
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         JsonParser jp = new JsonParser();
-        JsonElement je = jp.parse(jsonRequest.toString());
+        JsonElement je = jp.parse(jsonNodes.toString());
         String prettyJsonString = gson.toJson(je);
 
         return prettyJsonString;
@@ -186,9 +189,9 @@ public class Parser {
      * @return {@link ArrayList<Node>} containing the nodes from client's JSON request.
      * @throws IOException .
      */
-    public static ArrayList<Node> parseRequestToNodesList(String jsonString){
-        JSONObject jsonRequest = new JSONObject(jsonString);
-        JSONObject jsonNodes = jsonRequest.getJSONObject(JSON_HEADER_REQUEST);
+    public static ArrayList<Node> parseJsonStringToNodes(String jsonString){
+//        JSONObject jsonRequest = new JSONObject(jsonString);
+        JSONObject jsonNodes = new JSONObject(jsonString);
 
         JSONObject jsonNodeFrom = jsonNodes.getJSONObject(JSON_HEADER_FROM);
         JSONObject jsonNodeTo = jsonNodes.getJSONObject(JSON_HEADER_TO);
@@ -201,5 +204,55 @@ public class Parser {
         list.add(to);
 
         return list;
+    }
+
+    /**
+     * Returns a {@link String} containing a JSON representation of a {@link _Result}
+     * @param result object of type {@link _Result} representing a path and its cost.
+     * @return a {@link String} containing a JSON representation of a {@link _Result}
+     */
+    public static String parseResultToJsonString(Result result){
+
+        JSONObject jsonResult = new JSONObject();
+        JSONArray jsonNodes = new JSONArray();
+
+        jsonResult.put(JSON_HEADER_VALUE,result.getValue());
+
+        ArrayList<Node> list = result.getNodes();
+        for(Node node: list){
+            JSONObject jsonNode = new JSONObject();
+
+            jsonNode.put(JSON_HEADER_NODE_NAME,node.getName());
+            jsonNode.put(JSON_HEADER_NODE_TYPE,node.getType());
+            jsonNode.put(JSON_HEADER_NODE_ID,node.getId());
+
+            jsonNodes.put(jsonNode);
+        }
+
+        jsonResult.put(JSON_HEADER_NODES, jsonNodes);
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        JsonParser jp = new JsonParser();
+        JsonElement je = jp.parse(jsonResult.toString());
+        String prettyJsonString = gson.toJson(je);
+
+        return prettyJsonString;
+    }
+
+    public static _Result parseJsonStringToResult(String jsonString){
+        JSONObject json = new JSONObject(jsonString);
+        _Result result = new _Result();
+
+        ArrayList<Node> list = new ArrayList<>();
+        JSONArray jsonArray = json.getJSONArray(JSON_HEADER_NODES);
+        jsonArray.forEach(item ->{
+            JSONObject obj =  (JSONObject) item;
+            list.add(new Node(obj.getInt(JSON_HEADER_NODE_ID), obj.getString(JSON_HEADER_NODE_NAME), obj.getString(JSON_HEADER_NODE_TYPE)));
+        });
+
+        result.setValue(json.getInt(JSON_HEADER_VALUE));
+        result.setNodes(list);
+
+        return result;
     }
 }
