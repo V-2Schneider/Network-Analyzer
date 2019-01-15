@@ -1,7 +1,7 @@
 package pl.put.poznan.analyzer.logic;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,17 +12,18 @@ public class  Main {
     public static int p,ent,outt;
 
     // logger
-    static Logger log = LoggerFactory.getLogger(Search.class);
+  //  static Logger log = LoggerFactory.getLogger(Search.class);
 
     public static void main(String[] args) throws IOException {
 
-        log.info("Uruchomiono serwer");
+     //   log.info("Uruchomiono serwer");
 
         Graph graph = new Graph();
 
+        DataBase.getNetworkFromDatabase(0,graph);
         //Przykład grafu : 1->2 , 1->3
 
-        Node a = new Node("n1");
+  /*      Node a = new Node("n1");
         Node b = new Node("n2");
         Node c = new Node("n3");
         Node d = new Node("n4");
@@ -40,7 +41,7 @@ public class  Main {
         graph.addNode(g);
         graph.addNode(h);
 
-        log.info("dodano wierzchołki");
+     //   log.info("dodano wierzchołki");
 
         graph.addConnection(1,2,21);
         graph.addConnection(2,3,37);
@@ -51,9 +52,10 @@ public class  Main {
         graph.addConnection(1,7,40);
         graph.addConnection(7,4,2);
         graph.addConnection(4,8,1);
+*/
+        DataBase.UpdateDatabase(0,graph);
 
-
-        log.info("dodano połączenia");
+       // log.info("dodano połączenia");
 
         // szukanie sciezki Greedy
         PathResult szukanie = Search.GreedySeach(1,4,graph.getMapOfNodes());
@@ -93,13 +95,13 @@ public class  Main {
         }
 
 
-        log.info("rozpoczęcie parsowania");
+       // log.info("rozpoczęcie parsowania");
 
 
         System.out.println("Parsuje...");
         Parser.parseGraphToJsonString(graph);
 
-        log.info("parsowanie zakończone");
+       // log.info("parsowanie zakończone");
 
 //        //wprowadzanie
 //        Scanner s = new Scanner(System.in);
