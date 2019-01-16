@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" minHeight="412.0" minWidth="477.0" prefHeight="413.0" prefWidth="477.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.put.poznan.analyzer.app.Controller">
+    <children>
+        <Label fx:id="generateLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="52.0" layoutY="14.0" prefHeight="17.0" prefWidth="387.0" text="System zarządzający siecią" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font></Label>
+        <Button fx:id="addNodesButton" layoutX="74.0" layoutY="157.0" mnemonicParsing="false" onAction="#handleAddClientsButton" prefHeight="43.0" prefWidth="84.0" text="Dodaj wierzcholek" textAlignment="CENTER" wrapText="true" />
+        <Button fx:id="addEmployeesButton" layoutX="315.0" layoutY="206.0" mnemonicParsing="false" onAction="#handleAddEmployeesButton" prefHeight="43.0" prefWidth="84.0" text="Dodaj krawedz" textAlignment="CENTER" wrapText="true" />
+        <Button fx:id="openButton" layoutX="29.0" layoutY="311.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="153.0" text="Otworz z pliku" />
+      <TextField fx:id="addNode" layoutX="29.0" layoutY="114.0" prefHeight="25.0" prefWidth="173.0" />
+      <TextField fx:id="nodevalue" layoutX="266.0" layoutY="157.0" prefHeight="25.0" prefWidth="173.0" />
+      <ComboBox fx:id="nodefrom" layoutX="266.0" layoutY="73.0" prefHeight="25.0" prefWidth="173.0" />
+      <ComboBox fx:id="nodeto" layoutX="266.0" layoutY="114.0" prefHeight="25.0" prefWidth="173.0" />
+      <Button fx:id="bfs" layoutX="331.0" layoutY="275.0" mnemonicParsing="false" onAction="#handlebfsButton" text="BFS" />
+      <Button fx:id="dfs" layoutX="331.0" layoutY="320.0" mnemonicParsing="false" onAction="#handledfsButton" text="DFS" />
+      <Button fx:id="greedy" layoutX="320.0" layoutY="362.0" mnemonicParsing="false" onAction="#handlegreedyButton" text="GREEDY" />
+      <ComboBox fx:id="start" layoutX="237.0" layoutY="275.0" prefHeight="25.0" prefWidth="59.0" />
+      <ComboBox fx:id="end" layoutX="237.0" layoutY="308.0" prefHeight="25.0" prefWidth="59.0" />
+    </children>
+</AnchorPane>
